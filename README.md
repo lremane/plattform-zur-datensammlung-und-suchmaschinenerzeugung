@@ -12,7 +12,7 @@
 -
 -
 -
--
+- [Tony Lenz](https://gitlab-softwareprojekt.fim.htwk-leipzig.de/tlenz1)
 - [Lukas Marche](https://gitlab-softwareprojekt.fim.htwk-leipzig.de/lmarche)
 
 ## Meetings 
