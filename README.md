@@ -13,10 +13,10 @@
 -
 -
 -
-- [Lukas Marche] (https://gitlab-softwareprojekt.fim.htwk-leipzig.de/lmarche)
+- [Lukas Marche](https://gitlab-softwareprojekt.fim.htwk-leipzig.de/lmarche)
 
 ## Meetings 
 
-- [Protocol] (https://gitlab-softwareprojekt.fim.htwk-leipzig.de/pdus/plattform-zur-datensammlung-und-suchmaschinenerzeugung/-/wikis/Board-Meetings)
+- [Protocol](https://gitlab-softwareprojekt.fim.htwk-leipzig.de/pdus/plattform-zur-datensammlung-und-suchmaschinenerzeugung/-/wikis/Board-Meetings)
 
 
