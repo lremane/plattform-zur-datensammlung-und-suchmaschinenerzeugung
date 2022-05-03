@@ -17,6 +17,10 @@
 
 ## Design-Thinking-Process
 
+### 1 Verstehen
+
+Es soll eine Anwendung für Webseitenbetreiber, die RDF Daten bereitstellen, erstellet werden. In dieser Anwendung soll durch Eingabe einer URL diese Website nach RDF Daten gecrawlt, validiert, zwischengespeichert und an QAnswer.eu übergeben werden.
+
 ### Issue Definition
 
 ### Design-Thinking-Prototypes
