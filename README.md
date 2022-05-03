@@ -19,7 +19,7 @@
 
 Es soll eine Anwendung für Webseitenbetreiber, die RDF Daten bereitstellen, erstellet werden. In dieser Anwendung soll durch Eingabe einer URL diese Website nach RDF Daten gecrawlt, validiert, zwischengespeichert und an QAnswer.eu übergeben werden.
 
-###Schritt 1: Verstehen
+### Schritt 1: Verstehen
 - Was soll neu entwickelt werden?
     - eine Anwendung welches einer Webseite die Anbindung an QAnswer ermöglicht
     - bereits existierende Toolchain zum (www -> rdf) einheitlich, dauerhaft und nutzer*innen-freundlich konfigurieren können
@@ -36,7 +36,7 @@ Es soll eine Anwendung für Webseitenbetreiber, die RDF Daten bereitstellen, ers
 - Endzustand der Lösung?
     - User übergibt API Website per URL. Diese wird live gecrawlt an QAnswer übergeben, sodass der User Typ 1 direkt seine Daten zur Verfügung gestellt hat und User Typ 2 direkt seine Anfragen geben kann.
 
-###Schritt 2: Beobachten
+### Schritt 2: Beobachten
 - Wie gehen Nutzer aktuell vor (in realer Umgebung)?
     - manuelles hochladen reiner RDF Dateien und dann Auswertung via QAnswer
 - Welche Verbesserungen werden gewünscht?
