@@ -7,7 +7,7 @@
 -
 -
 -
--
+- [Laurin Remane](https://gitlab-softwareprojekt.fim.htwk-leipzig.de/mremane)
 - [Abdul Rahman Alkedda](https://gitlab-softwareprojekt.fim.htwk-leipzig.de/aalkedda)
 - [Abdullah Al-hoty](https://gitlab-softwareprojekt.fim.htwk-leipzig.de/aalhoty)
 -
