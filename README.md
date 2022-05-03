@@ -3,14 +3,14 @@
 ## Members
 
 - [Johannes Kindler](https://gitlab-softwareprojekt.fim.htwk-leipzig.de/jkindler)
--
--
--
--
+- [Philipp Semlinger](https://gitlab-softwareprojekt.fim.htwk-leipzig.de/psemling)
+- [Lukas Marche](https://gitlab-softwareprojekt.fim.htwk-leipzig.de/lmarche)
+- [Finn Mergenthal](https://gitlab-softwareprojekt.fim.htwk-leipzig.de/fmergent)
+- [David Deutschmann](https://gitlab-softwareprojekt.fim.htwk-leipzig.de/ddeutsch)
 - [Laurin Remane](https://gitlab-softwareprojekt.fim.htwk-leipzig.de/mremane)
 - [Abdul Rahman Alkedda](https://gitlab-softwareprojekt.fim.htwk-leipzig.de/aalkedda)
 - [Abdullah Al-hoty](https://gitlab-softwareprojekt.fim.htwk-leipzig.de/aalhoty)
--
+- [Moritz Meister](https://gitlab-softwareprojekt.fim.htwk-leipzig.de/mmeister)
 - [Lukas Ponicke](https://gitlab-softwareprojekt.fim.htwk-leipzig.de/lponicke)
 - [Tony Lenz](https://gitlab-softwareprojekt.fim.htwk-leipzig.de/tlenz1)
 - [Lukas Marche](https://gitlab-softwareprojekt.fim.htwk-leipzig.de/lmarche)
