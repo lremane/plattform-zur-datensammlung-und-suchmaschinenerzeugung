@@ -22,7 +22,7 @@ Es soll eine Anwendung für Webseitenbetreiber, die RDF Daten bereitstellen, ers
 ### Schritt 1: Verstehen
 - Was soll neu entwickelt werden?
     - eine Anwendung welches einer Webseite die Anbindung an QAnswer ermöglicht
-    - bereits existierende Toolchain zum (www -> rdf) einheitlich, dauerhaft und nutzer*innen-freundlich konfigurieren können
+    - bereits existierende Toolchain zum (www -> rdf) einheitlich, dauerhaft und nutzer\*innen-freundlich konfigurieren können
 - Für wen soll entwickelt werden?
     - Nutzergruppen erkennen 
         - User Typ 1 (Edeka): Business Besitzer, der seine Daten auf QA zur Verfügung stellen/verarbeiten möchte
@@ -57,6 +57,16 @@ Es soll eine Anwendung für Webseitenbetreiber, die RDF Daten bereitstellen, ers
 ### Issue Definition
 
 ### Design-Thinking-Prototypes
+
+#### Prototyp 1: Pipelines
+
+Unser Produkt dient der Migration und Synchronisation strukturierter Daten aus unterschiedlichen Quellen in Datensenken.
+
+Dazu wird dem/der Nutzer\*in ermöglicht Pipelines zu definieren. Eine Pipeline besteht aus einer Datenquelle (Website mit strukturierten Informationen, Tripplestore (SPARQL-Query), RDF-Datei), einer Datensenke (Tripplestore, QAnswer-Instanz, RDF-Datei) und ggf. Verarbeitungsschritten dazwischen. Jede Komponente der Pipeline und jede Pipeline an sich ist unabhängig voneinander konfigurierbar (Baukastensystem). 
+
+Einmal erstellt, können die Pipelines auf Knopfdruck oder zyklisch die Datenbasis der Quelle migrieren bzw. die bestehenden Daten der Senke updaten.
+
+Die Konfiguration des Systems könnte Dateibasiert und/oder eine Website erfolgen.
 
 ### Functional and Nonfunctional (User Stories)
 
