@@ -56,8 +56,8 @@ Es soll eine Anwendung für Webseitenbetreiber, die RDF Daten bereitstellen, ers
 
 ### Schritt 3: Synthese
 - Personas ableiten, die die Problemfälle/Vision begreifbar machen
-    - Bürger*innen-Amt will Dokumente, Formulare, Ansprechpartner*innen natürlichsprachlich durch eigene QAnswer-Instanz durchsuchbar machen.         Konfiguriert dafür Crawler auf Bundes-, Landes- und Kommunale Websites auf strukturierte Daten. Konfiguriert dazu zusätzlich Update-Prozess aus eigenem Triplestore auf QAnswer-Instanz
-    - Edeka-Markt möchte Kund*innen Produktsuche über Website ermöglichen (QAnswer-Backend). Ohne unser Produkt muss die Website bei jeder Änderung manuell geparsed werden. 
+    - Bürger\*innen-Amt will Dokumente, Formulare, Ansprechpartner\*innen natürlichsprachlich durch eigene QAnswer-Instanz durchsuchbar machen.         Konfiguriert dafür Crawler auf Bundes-, Landes- und Kommunale Websites auf strukturierte Daten. Konfiguriert dazu zusätzlich Update-Prozess aus eigenem Triplestore auf QAnswer-Instanz
+    - Edeka-Markt möchte Kund\*innen Produktsuche über Website ermöglichen (QAnswer-Backend). Ohne unser Produkt muss die Website bei jeder Änderung manuell geparsed werden. 
     - Daten sollen nicht mehrfach gezogen und überschrieben sondern optimalerweise lediglich aktualisiert werden
 
 
@@ -65,10 +65,10 @@ Es soll eine Anwendung für Webseitenbetreiber, die RDF Daten bereitstellen, ers
 ### Schritt 4: Lösungsideen 
 - bereits exisitierendes Programm der Uni Mannheim zum Crawlen für QA
 
-- "Bürger*innen-Amt will Dokumente, Formulare, Ansprechpartner*innen natürlichsprachlich durch eigene QAnswer-Instanz durchsuchbar machen. Konfiguriert dafür Crawler auf Bundes-, Landes- und Kommunale Websites auf strukturierte Daten. Konfiguriert dazu zusätzlich Update-Prozess aus eigenem Triplestore auf QAnswer-Instanz"
+- "Bürger\*innen-Amt will Dokumente, Formulare, Ansprechpartner\*innen natürlichsprachlich durch eigene QAnswer-Instanz durchsuchbar machen. Konfiguriert dafür Crawler auf Bundes-, Landes- und Kommunale Websites auf strukturierte Daten. Konfiguriert dazu zusätzlich Update-Prozess aus eigenem Triplestore auf QAnswer-Instanz"
  
 
-- "Edeka-Markt möchte Kund*innen Produktsuche über Website ermöglichen (QAnswer-Backend). Ohne unser Produkt muss die Website bei jeder Änderung manuell geparsed werden."
+- "Edeka-Markt möchte Kund\*innen Produktsuche über Website ermöglichen (QAnswer-Backend). Ohne unser Produkt muss die Website bei jeder Änderung manuell geparsed werden."
 ->  automatisiertes Parsen (und Daten zwischenhalten/-speichern)
 
 -  Daten sollen nicht mehrfach gezogen und überschrieben sondern optimalerweise lediglich aktualisiert werden
