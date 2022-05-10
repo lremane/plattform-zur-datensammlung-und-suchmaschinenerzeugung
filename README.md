@@ -54,6 +54,46 @@ Es soll eine Anwendung für Webseitenbetreiber, die RDF Daten bereitstellen, ers
     - Rückgabe von Statistiken (Menge der verwertbaren Daten, Häufigkeit der verwertbaren Daten in Gesamtdatensatz)
     - (Möglichkeit der direkten Nutzung einer QAnswer Suchzeile und Rückgabe der Antworten  innerhalb der Webseite)
 
+### Schritt 3: Synthese
+- Personas ableiten, die die Problemfälle/Vision begreifbar machen
+    - Bürger*innen-Amt will Dokumente, Formulare, Ansprechpartner*innen natürlichsprachlich durch eigene QAnswer-Instanz durchsuchbar machen.         Konfiguriert dafür Crawler auf Bundes-, Landes- und Kommunale Websites auf strukturierte Daten. Konfiguriert dazu zusätzlich Update-Prozess aus eigenem Triplestore auf QAnswer-Instanz
+    - Edeka-Markt möchte Kund*innen Produktsuche über Website ermöglichen (QAnswer-Backend). Ohne unser Produkt muss die Website bei jeder Änderung manuell geparsed werden. 
+    - Daten sollen nicht mehrfach gezogen und überschrieben sondern optimalerweise lediglich aktualisiert werden
+
+
+
+### Schritt 4: Lösungsideen 
+- bereits exisitierendes Programm der Uni Mannheim zum Crawlen für QA
+
+- "Bürger*innen-Amt will Dokumente, Formulare, Ansprechpartner*innen natürlichsprachlich durch eigene QAnswer-Instanz durchsuchbar machen. Konfiguriert dafür Crawler auf Bundes-, Landes- und Kommunale Websites auf strukturierte Daten. Konfiguriert dazu zusätzlich Update-Prozess aus eigenem Triplestore auf QAnswer-Instanz"
+ 
+
+- "Edeka-Markt möchte Kund*innen Produktsuche über Website ermöglichen (QAnswer-Backend). Ohne unser Produkt muss die Website bei jeder Änderung manuell geparsed werden."
+->  automatisiertes Parsen (und Daten zwischenhalten/-speichern)
+
+-  Daten sollen nicht mehrfach gezogen und überschrieben sondern optimalerweise lediglich aktualisiert werden
+-> Aktualisierung und (Zwischen-)speicherung der Daten
+
+Unser Produkt würde die Änderungen automatisch erkennen und die QAnswer-Instanz updaten.
+
+### Schritt 5 : Prototyping
+Technische Möglichkeiten bzw. bereits vorhandene Technologien:
+- RDFa 1.1 Distiller (alternativ JCrawler)
+- Frameworks für Website (react)
+- Komponenten als Docker Images an QAnswer
+- Datenbank (u.A. zur Erfassung von Statistiken)
+aufbereitete (alterantive) Lösungsideen (für Personas), welche die besonderen Lösungscharakteristika betonen
+Mockup-GUI: via mokup oder wireframe
+
+### Schritt 6: Testen
+
+-Beobachtungen und Fragen von Nutzer erfassen
+-Feedback/Bewertung sammeln
+-Testfälle definieren, durchführen und auswerten
+-Ableitung einer Bewertung der Lösungsideen (beste Lösung finden!)
+
+
+
 ### Issue Definition
 
 ### Design-Thinking-Prototypes
