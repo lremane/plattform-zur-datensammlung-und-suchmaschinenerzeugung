@@ -16,8 +16,6 @@
 
 ## Design-Thinking-Process
 
-Es soll eine Anwendung für Webseitenbetreiber, die RDF Daten bereitstellen, erstellet werden. In dieser Anwendung soll durch Eingabe einer URL diese Website nach RDF Daten gecrawlt, validiert, zwischengespeichert und an QAnswer.eu übergeben werden.
-
 
 ### Schritt 1: Verstehen
 - Was soll neu entwickelt werden?
@@ -98,18 +96,8 @@ Es soll eine Anwendung für Webseitenbetreiber, die RDF Daten bereitstellen, ers
 
 
 ### Schritt 4: Lösungsideen finden
-
 - bereits exisitierendes Programm der Uni Mannheim zum Crawlen für QA
-- "Bürger*innen-Amt will Dokumente, Formulare, Ansprechpartner*innen natürlichsprachlich durch eigene QAnswer-Instanz durchsuchbar machen. Konfiguriert dafür Crawler auf Bundes-, Landes- und Kommunale Websites auf strukturierte Daten. Konfiguriert dazu zusätzlich Update-Prozess aus eigenem Triplestore auf QAnswer-Instanz"
-    -> 
 
-- "Edeka-Markt möchte Kund*innen Produktsuche über Website ermöglichen (QAnswer-Backend). Ohne unser Produkt muss die Website bei jeder Änderung manuell geparsed werden."
-    -  automatisiertes Parsen (und Daten zwischenhalten/-speichern)
-
--  Daten sollen nicht mehrfach gezogen und überschrieben sondern optimalerweise lediglich aktualisiert werden
-    -> Aktualisierung und (Zwischen-)speicherung der Daten
-
-Unser Produkt würde die Änderungen automatisch erkennen und die QAnswer-Instanz updaten.
 
 ### Schritt 5 : Prototyping
 Technische Möglichkeiten bzw. bereits vorhandene Technologien:
@@ -139,8 +127,9 @@ Die Konfiguration des Systems könnte Dateibasiert und/oder eine Website erfolge
 - Ableitung einer Bewertung der Lösungsideen (beste Lösung finden!)
 
 
-
 ### Product Vision
+Es soll eine Anwendung für Webseitenbetreiber und Privatpersonen, die RDF Daten in Webseiten bereitstellen oder verarbeiten wollen, erstellt werden. In dieser Anwendung soll durch Eingabe einer URL diese Webseite nach RDF Daten gecrawlt, validiert, zwischengespeichert, analysiert und an QAnswer.eu übergeben werden.
+Darauf folgend ist eine Suchanfrage auf den Daten über QAnswer möglich und die heraushezogenen RDF-, sowie die Analysedaten stehen dem Nutzer zur Verfügung.
 
 ## Meetings 
 
