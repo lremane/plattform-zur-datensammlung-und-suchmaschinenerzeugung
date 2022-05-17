@@ -96,9 +96,9 @@ Es soll eine Anwendung für Webseitenbetreiber, die RDF Daten bereitstellen, ers
 
 - Ein Wirtschaftsanalyst möchte präzise Daten von verschiedenen Webseiten auf einmal zusammentragen, um sie anhand von ordinalen Kategorien zu analysieren.
 
-<span style="color:red">
+
 ### Schritt 4: Lösungsideen finden
-</span>
+
 - bereits exisitierendes Programm der Uni Mannheim zum Crawlen für QA
 - "Bürger*innen-Amt will Dokumente, Formulare, Ansprechpartner*innen natürlichsprachlich durch eigene QAnswer-Instanz durchsuchbar machen. Konfiguriert dafür Crawler auf Bundes-, Landes- und Kommunale Websites auf strukturierte Daten. Konfiguriert dazu zusätzlich Update-Prozess aus eigenem Triplestore auf QAnswer-Instanz"
     -> 
