@@ -4,7 +4,6 @@
 
 - [Johannes Kindler](https://gitlab-softwareprojekt.fim.htwk-leipzig.de/jkindler)
 - [Philipp Semlinger](https://gitlab-softwareprojekt.fim.htwk-leipzig.de/psemling)
-- [Lukas Marche](https://gitlab-softwareprojekt.fim.htwk-leipzig.de/lmarche)
 - [Finn Mergenthal](https://gitlab-softwareprojekt.fim.htwk-leipzig.de/fmergent)
 - [David Deutschmann](https://gitlab-softwareprojekt.fim.htwk-leipzig.de/ddeutsch)
 - [Laurin Remane](https://gitlab-softwareprojekt.fim.htwk-leipzig.de/mremane)
