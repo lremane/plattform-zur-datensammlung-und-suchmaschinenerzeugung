@@ -19,7 +19,6 @@
 
 Es soll eine Anwendung für Webseitenbetreiber, die RDF Daten bereitstellen, erstellet werden. In dieser Anwendung soll durch Eingabe einer URL diese Website nach RDF Daten gecrawlt, validiert, zwischengespeichert und an QAnswer.eu übergeben werden.
 
-##Problemraum
 
 ### Schritt 1: Verstehen
 - Was soll neu entwickelt werden?
