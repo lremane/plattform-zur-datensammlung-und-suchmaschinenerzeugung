@@ -25,40 +25,12 @@ Es soll eine Anwendung für Webseitenbetreiber, die RDF Daten bereitstellen, ers
 - gemeinsames Verständnis in Text ausdrücken
     - bereits existierende Toolchain zum (www -> rdf) einheitlich, dauerhaft und nutzer*innen-freundlich konfigurieren können
 - Für wen soll entwickelt werden?
-    - Nutzergruppen erkennen 
     - User Typ 1 (Edeka): Business Besitzer, der seine Daten auf QA zur Verfügung stellen/verarbeiten möchte
     - User Typ 2 (Theresa): Möchte Informationen aus spezifischen selbst ausgewählten Quellen durchsuchen können (automatisierte Datenbeschaffung)
+    - User Typ 3 (Sheldon): Möchte Rdf-Statistiken seiner Webseite bekommen
 - Welche Rahmenbedingungen berücksichtigen?
     - robots.txt berücksichtigen
     - Zeitplan und Budget einhalten
-- Nicht-funktionale Anforderungen:
-    - ansprechendes Design
-    - URL ähnlich zu QAnswer oder an QAnswer angegliedert
-    - Ausführungsqualität\
-        Zuverlässiges Arbeiten, Rückmeldungen/ Fehlermeldungen
-    - Leistung und Effizienz\
-        so schnell wie möglich, Redundanzvermeidung/Update-Verhalten, Verhindern, dass dieselben Seiten mehrmals gleichzeitig gecrawlt werden (Update-Cyclus)
-    - Aussehen und Handhabung\
-        GUI, UX, Funktionalität vs Intuitivität, technisch versierter User
-    - Sicherheitsanforderungen\
-        Abgeriegelte Accounts\
-    - Korrektheit\
-        Prüfen auf Korrektheit, Syntax-Fehler, RDF-Analyse
-    Weiterentwicklungsqualität\
-    - Wartbarkeit\
-    - Portier und Übertragbarkeit\
-    - Flexibilität (Einbringen von Standarts)\
-        Modularisierung, Orientierung an 'Pipeline'
-        Docker
-        Sparql
-        RDF
-    - Skalierbarkeit (später diskussionsrelevent)\
-- Funktionale Anforderungen
-    - Webseite auf RDF-Daten überprüfen
-    - Webseite auf RDF Daten Crawlen
-    - RDF Daten an QAnswer übergeben
-    - Nitzer erfolgreiche QA Anfrage ermöglichen
-    - Nutzer RDF Daten bereitstellen
 - Endzustand der Lösung?
     - User übergibt API Website per URL. Diese wird live gecrawlt an QAnswer übergeben, sodass der User Typ 1 direkt seine Daten zur Verfügung gestellt hat und User Typ 2 direkt seine Anfragen geben kann.
 
@@ -74,9 +46,36 @@ Es soll eine Anwendung für Webseitenbetreiber, die RDF Daten bereitstellen, ers
     - beständiges aktualisieren/updates des Datensatzes
     - persistente Konfiguration des Crawlingprozesses
 - Welche Wünsche haben die Nutzer?
-    - Einfaches (und schnelles) füttern von Daten aus Webseiten an QAnary
-    - ansprechendes Design und gute Handhabbarkeit
-    - Updaten/Synchronisieren von RDF Daten aus anderen Quellen (Triplestores)
+    - Nicht-funktionale Anforderungen:
+        - gute Handhabbarkeit
+        - ansprechendes Design
+        - URL ähnlich zu QAnswer oder an QAnswer angegliedert
+        - Ausführungsqualität\
+            Zuverlässiges Arbeiten, Rückmeldungen/ Fehlermeldungen
+        - Leistung und Effizienz\
+            so schnell wie möglich, Redundanzvermeidung/Update-Verhalten, Verhindern, dass dieselben Seiten mehrmals gleichzeitig gecrawlt werden (Update-Cyclus)
+        - Aussehen und Handhabung\
+            GUI, UX, Funktionalität vs Intuitivität, technisch versierter User
+        - Sicherheitsanforderungen\
+            Abgeriegelte Accounts\
+        - Korrektheit\
+            Prüfen auf Korrektheit, Syntax-Fehler, RDF-Analyse
+        Weiterentwicklungsqualität\
+        - Wartbarkeit\
+        - Portier und Übertragbarkeit\
+        - Flexibilität (Einbringen von Standarts)\
+            Modularisierung, Orientierung an 'Pipeline'
+            Docker
+            Sparql
+            RDF
+        - Skalierbarkeit (später diskussionsrelevent)\
+    - Funktionale Anforderungen
+        - Webseite auf RDF-Daten überprüfen
+        - Webseite auf RDF Daten Crawlen
+        - RDF Daten an QAnswer übergeben
+        - Nitzer erfolgreiche QA Anfrage ermöglichen
+        - Nutzer RDF Daten bereitstellen
+        - ggf. Updaten/Synchronisieren von RDF Daten aus anderen Quellen (Triplestores)
 - Was würden sich die Nutzer (nicht die Devs!) als einen Idealzustand vorstellen?
     - Öffnen der Applikation, Einfügen des Links der Webseite, Bestätigen, (kurz!  Warten,) (Anfragen eingeben, Antworten erhalten, Fertig) ~> siehe nächster Punkt
     - danach erfolgreiches Nutzen von QAnswer auf den neu gewonnenen Daten
