@@ -84,11 +84,15 @@ Es soll eine Anwendung für Webseitenbetreiber, die RDF Daten bereitstellen, ers
 
 
 ### Schritt 3: Synthese
-- Vereinigung von Ergebnissen aus Schritt 1 und 2:
-- Personas ableiten, die die Problemfälle/Vision begreifbar machen
-    - Bürger*innen-Amt will Dokumente, Formulare, Ansprechpartner*innen natürlichsprachlich durch eigene QAnswer-Instanz durchsuchbar machen. Konfiguriert dafür Crawler auf Bundes-, Landes- und Kommunale Websites auf strukturierte Daten. Konfiguriert dazu zusätzlich Update-Prozess aus eigenem Triplestore auf QAnswer-Instanz
-    - Edeka-Markt möchte Kund*innen Produktsuche über Website ermöglichen (QAnswer-Backend). Ohne unser Produkt muss die Website bei jeder Änderung manuell geparsed werden. 
-- Daten sollen nicht mehrfach gezogen und überschrieben sondern optimalerweise lediglich aktualisiert werden
+
+#### User Stories
+- Ein zuständiger Mitarbeiter von Edeka würde gern seine gesamte Webpräsenz übersichtlich darstellbar aufbereiten, um Sichtbarkeit bei Suchmaschinen und ihm statistische Auswertungen zu ermöglichen.
+
+- Eine recherchierende Schülerin möchte schnell und ohne technisches Verständnis oder eigenen Server Daten von Wikipedia aufbereitet bekommen, um Zeit zu sparen.
+
+- Ein Mitarbeiter eines Bürgerbüros will Dokumente, Formulare, Ansprechpartnerinnen natürlichsprachlich durch eigene QAnswer-Instanz durchsuchbar machen. Dafür konfiguriert sie den Crawler auf Bundes-, Landes- und kommunalen Websites auf strukturierte Daten. Dazu konfiguriert sie zusätzlich Update-Prozess aus eigenem Triplestore auf QAnswer-Instanz.
+
+- Ein Wirtschaftsanalyst möchte präzise Daten von verschiedenen Webseiten auf einmal zusammentragen, um sie anhand von ordinalen Kategorien zu analysieren.
 
 
 ### Schritt 4: Lösungsideen finden
