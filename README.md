@@ -86,6 +86,8 @@ Es soll eine Anwendung für Webseitenbetreiber, die RDF Daten bereitstellen, ers
 ### Schritt 3: Synthese
 
 #### User Stories
+- Jeder Nutzer ist grundsätzlich auf Korrektheit und Gesamtheit der gecrawlten Daten, möglichst schnelle und effiziente Verarbeitung und möglichst einfache Handhabung angewiesen.
+
 - Ein zuständiger Mitarbeiter von Edeka würde gern seine gesamte Webpräsenz übersichtlich darstellbar aufbereiten, um Sichtbarkeit bei Suchmaschinen und ihm statistische Auswertungen zu ermöglichen.
 
 - Eine recherchierende Schülerin möchte schnell und ohne technisches Verständnis oder eigenen Server Daten von Wikipedia aufbereitet bekommen, um Zeit zu sparen.
