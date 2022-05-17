@@ -19,60 +19,91 @@
 
 Es soll eine Anwendung für Webseitenbetreiber, die RDF Daten bereitstellen, erstellet werden. In dieser Anwendung soll durch Eingabe einer URL diese Website nach RDF Daten gecrawlt, validiert, zwischengespeichert und an QAnswer.eu übergeben werden.
 
+##Problemraum
+
 ### Schritt 1: Verstehen
 - Was soll neu entwickelt werden?
-    - eine Anwendung welches einer Webseite die Anbindung an QAnswer ermöglicht
-    - bereits existierende Toolchain zum (www -> rdf) einheitlich, dauerhaft und nutzer\*innen-freundlich konfigurieren können
+    - eine Anwendung welches einer Webseite die Anbindung an QAnswer ermöglicht, um die darin enthaltenen Informationen bereitzustellen und über das QA System erreichbar zu machen
+- gemeinsames Verständnis in Text ausdrücken
+    - bereits existierende Toolchain zum (www -> rdf) einheitlich, dauerhaft und nutzer*innen-freundlich konfigurieren können
 - Für wen soll entwickelt werden?
     - Nutzergruppen erkennen 
-        - User Typ 1 (Edeka): Business Besitzer, der seine Daten auf QA zur Verfügung stellen/verarbeiten möchte
-        - User Typ 2 (Theresa): Möchte Informationen aus spezifischen selbst ausgewählten Quellen durchsuchen können (automatisierte        Datenbeschaffung)
+    - User Typ 1 (Edeka): Business Besitzer, der seine Daten auf QA zur Verfügung stellen/verarbeiten möchte
+    - User Typ 2 (Theresa): Möchte Informationen aus spezifischen selbst ausgewählten Quellen durchsuchen können (automatisierte Datenbeschaffung)
 - Welche Rahmenbedingungen berücksichtigen?
     - robots.txt berücksichtigen
     - Zeitplan und Budget einhalten
-    - nicht-funktionale Anforderungen notieren
-        - ansprechendes Design
-        - URL ähnlich zu QAnswer oder an QAnswer angegliedert
+- Nicht-funktionale Anforderungen:
+    - ansprechendes Design
+    - URL ähnlich zu QAnswer oder an QAnswer angegliedert
+    - Ausführungsqualität\
+        Zuverlässiges Arbeiten, Rückmeldungen/ Fehlermeldungen
+    - Leistung und Effizienz\
+        so schnell wie möglich, Redundanzvermeidung/Update-Verhalten, Verhindern, dass dieselben Seiten mehrmals gleichzeitig gecrawlt werden (Update-Cyclus)
+    - Aussehen und Handhabung\
+        GUI, UX, Funktionalität vs Intuitivität, technisch versierter User
+    - Sicherheitsanforderungen\
+        Abgeriegelte Accounts\
+    - Korrektheit\
+        Prüfen auf Korrektheit, Syntax-Fehler, RDF-Analyse
+    Weiterentwicklungsqualität\
+    - Wartbarkeit\
+    - Portier und Übertragbarkeit\
+    - Flexibilität (Einbringen von Standarts)\
+        Modularisierung, Orientierung an 'Pipeline'
+        Docker
+        Sparql
+        RDF
+    - Skalierbarkeit (später diskussionsrelevent)\
+- Funktionale Anforderungen
+    - Webseite auf RDF-Daten überprüfen
+    - Webseite auf RDF Daten Crawlen
+    - RDF Daten an QAnswer übergeben
+    - Nitzer erfolgreiche QA Anfrage ermöglichen
+    - Nutzer RDF Daten bereitstellen
 - Endzustand der Lösung?
     - User übergibt API Website per URL. Diese wird live gecrawlt an QAnswer übergeben, sodass der User Typ 1 direkt seine Daten zur Verfügung gestellt hat und User Typ 2 direkt seine Anfragen geben kann.
 
+
 ### Schritt 2: Beobachten
 - Wie gehen Nutzer aktuell vor (in realer Umgebung)?
-    - manuelles hochladen reiner RDF Dateien und dann Auswertung via QAnswer
+    - manuelles hochladen reiner RDF Dateien und dann Auswertung via QAnswe
+    - Prozess soll automatisiert werdenr
+    - keine Möglichkeit automatisierter Datenbeschaffung in der Form (Typ 2)
 - Welche Verbesserungen werden gewünscht?
     - Nutzeroberfläche soll geschaffen werden
-    - Prozess soll automatisiert werden
     - Eingabe der URL
     - beständiges aktualisieren/updates des Datensatzes
     - persistente Konfiguration des Crawlingprozesses
 - Welche Wünsche haben die Nutzer?
     - Einfaches (und schnelles) füttern von Daten aus Webseiten an QAnary
+    - ansprechendes Design und gute Handhabbarkeit
     - Updaten/Synchronisieren von RDF Daten aus anderen Quellen (Triplestores)
 - Was würden sich die Nutzer (nicht die Devs!) als einen Idealzustand vorstellen?
-    - Öffnen der Applikation, Einfügen des Links der Webseite, Bestätigen, (kurz!  Warten,) Anfragen eingeben, Antworten erhalten, Fertig
+    - Öffnen der Applikation, Einfügen des Links der Webseite, Bestätigen, (kurz!  Warten,) (Anfragen eingeben, Antworten erhalten, Fertig) ~> siehe nächster Punkt
     - danach erfolgreiches Nutzen von QAnswer auf den neu gewonnenen Daten
     - Rückgabe von Statistiken (Menge der verwertbaren Daten, Häufigkeit der verwertbaren Daten in Gesamtdatensatz)
     - (Möglichkeit der direkten Nutzung einer QAnswer Suchzeile und Rückgabe der Antworten  innerhalb der Webseite)
 
+
 ### Schritt 3: Synthese
+- Vereinigung von Ergebnissen aus Schritt 1 und 2:
 - Personas ableiten, die die Problemfälle/Vision begreifbar machen
-    - Bürger\*innen-Amt will Dokumente, Formulare, Ansprechpartner\*innen natürlichsprachlich durch eigene QAnswer-Instanz durchsuchbar machen.         Konfiguriert dafür Crawler auf Bundes-, Landes- und Kommunale Websites auf strukturierte Daten. Konfiguriert dazu zusätzlich Update-Prozess aus eigenem Triplestore auf QAnswer-Instanz
-    - Edeka-Markt möchte Kund\*innen Produktsuche über Website ermöglichen (QAnswer-Backend). Ohne unser Produkt muss die Website bei jeder Änderung manuell geparsed werden. 
-    - Daten sollen nicht mehrfach gezogen und überschrieben sondern optimalerweise lediglich aktualisiert werden
+    - Bürger*innen-Amt will Dokumente, Formulare, Ansprechpartner*innen natürlichsprachlich durch eigene QAnswer-Instanz durchsuchbar machen. Konfiguriert dafür Crawler auf Bundes-, Landes- und Kommunale Websites auf strukturierte Daten. Konfiguriert dazu zusätzlich Update-Prozess aus eigenem Triplestore auf QAnswer-Instanz
+    - Edeka-Markt möchte Kund*innen Produktsuche über Website ermöglichen (QAnswer-Backend). Ohne unser Produkt muss die Website bei jeder Änderung manuell geparsed werden. 
+- Daten sollen nicht mehrfach gezogen und überschrieben sondern optimalerweise lediglich aktualisiert werden
 
 
-
-### Schritt 4: Lösungsideen 
+### Schritt 4: Lösungsideen finden
 - bereits exisitierendes Programm der Uni Mannheim zum Crawlen für QA
+- "Bürger*innen-Amt will Dokumente, Formulare, Ansprechpartner*innen natürlichsprachlich durch eigene QAnswer-Instanz durchsuchbar machen. Konfiguriert dafür Crawler auf Bundes-, Landes- und Kommunale Websites auf strukturierte Daten. Konfiguriert dazu zusätzlich Update-Prozess aus eigenem Triplestore auf QAnswer-Instanz"
+    -> 
 
-- "Bürger\*innen-Amt will Dokumente, Formulare, Ansprechpartner\*innen natürlichsprachlich durch eigene QAnswer-Instanz durchsuchbar machen. Konfiguriert dafür Crawler auf Bundes-, Landes- und Kommunale Websites auf strukturierte Daten. Konfiguriert dazu zusätzlich Update-Prozess aus eigenem Triplestore auf QAnswer-Instanz"
- 
-
-- "Edeka-Markt möchte Kund\*innen Produktsuche über Website ermöglichen (QAnswer-Backend). Ohne unser Produkt muss die Website bei jeder Änderung manuell geparsed werden."
-->  automatisiertes Parsen (und Daten zwischenhalten/-speichern)
+- "Edeka-Markt möchte Kund*innen Produktsuche über Website ermöglichen (QAnswer-Backend). Ohne unser Produkt muss die Website bei jeder Änderung manuell geparsed werden."
+    -  automatisiertes Parsen (und Daten zwischenhalten/-speichern)
 
 -  Daten sollen nicht mehrfach gezogen und überschrieben sondern optimalerweise lediglich aktualisiert werden
--> Aktualisierung und (Zwischen-)speicherung der Daten
+    -> Aktualisierung und (Zwischen-)speicherung der Daten
 
 Unser Produkt würde die Änderungen automatisch erkennen und die QAnswer-Instanz updaten.
 
@@ -82,21 +113,9 @@ Technische Möglichkeiten bzw. bereits vorhandene Technologien:
 - Frameworks für Website (react)
 - Komponenten als Docker Images an QAnswer
 - Datenbank (u.A. zur Erfassung von Statistiken)
-aufbereitete (alterantive) Lösungsideen (für Personas), welche die besonderen Lösungscharakteristika betonen
-Mockup-GUI: via mokup oder wireframe
+- aufbereitete (alterantive) Lösungsideen (für Personas), welche die besonderen Lösungscharakteristika betonen
+- Mockup-GUI: via mokup oder wireframe
 
-### Schritt 6: Testen
-
--Beobachtungen und Fragen von Nutzer erfassen
--Feedback/Bewertung sammeln
--Testfälle definieren, durchführen und auswerten
--Ableitung einer Bewertung der Lösungsideen (beste Lösung finden!)
-
-
-
-### Issue Definition
-
-### Design-Thinking-Prototypes
 
 #### Prototyp 1: Pipelines
 
@@ -108,11 +127,14 @@ Einmal erstellt, können die Pipelines auf Knopfdruck oder zyklisch die Datenbas
 
 Die Konfiguration des Systems könnte Dateibasiert und/oder eine Website erfolgen.
 
-### Functional and Nonfunctional (User Stories)
 
-#### Functional
+### Schritt 6: Testen
+- Beobachtungen und Fragen von Nutzer erfassen
+- Feedback/Bewertung sammeln
+- Testfälle definieren, durchführen und auswerten
+- Ableitung einer Bewertung der Lösungsideen (beste Lösung finden!)
 
-#### Nonfunctional
+
 
 ### Product Vision
 
