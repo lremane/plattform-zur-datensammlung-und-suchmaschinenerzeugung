@@ -49,7 +49,7 @@
     - Eingabe der URL
     - beständiges aktualisieren/updates des Datensatzes
     - persistente Konfiguration des Crawlingprozesses
-- Welche Wünsche haben die Nutzer?
+- <a name="userReq">Welche Wünsche haben die Nutzer?</a>
     - Nicht-funktionale Anforderungen:
         - gute Handhabbarkeit
         - ansprechendes Design
@@ -77,7 +77,7 @@
         - Webseite auf RDF-Daten überprüfen
         - Webseite auf RDF Daten Crawlen
         - RDF Daten an QAnswer übergeben
-        - Nitzer erfolgreiche QA Anfrage ermöglichen
+        - Nutzer erfolgreiche QA Anfrage ermöglichen
         - Nutzer RDF Daten bereitstellen
         - ggf. Updaten/Synchronisieren von RDF Daten aus anderen Quellen (Triplestores)
 - Was würden sich die Nutzer (nicht die Devs!) als einen Idealzustand vorstellen?
@@ -102,6 +102,7 @@
 ### Schritt 4: Lösungsideen finden
 
 - bereits exisitierendes Programm der Uni Mannheim zum Crawlen für QA
+- siehe Schritt 2 unter ["Welche Wünsche haben die Nutzer?"](#userReq)
 
 ### Schritt 5 : Prototyping
 
