@@ -150,9 +150,12 @@ Webapplikation - GUI
 
 ![image](https://www.imn.htwk-leipzig.de/~jkindler/PDuS/img-2.png)
 
+
 Plug-In (optional)
 
 ![image](https://www.imn.htwk-leipzig.de/~jkindler/PDuS/img-3.png)
+
+TODO : Download für extrahierte RDF´s einbinden
 
 ## User Stories
 - Jeder Nutzer ist grundsätzlich auf Korrektheit und Gesamtheit der gecrawlten Daten, möglichst schnelle und effiziente Verarbeitung und möglichst einfache Handhabung angewiesen.
