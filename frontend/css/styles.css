@@ -4,15 +4,28 @@ body {
     font-family: Lucida Console;
 }
 
-section {
-    height: 350px;
-    background-color: #293145; 
-    padding: 5px;
-    width: 300px;
-    margin: 5px;
+.header{
+    text-align: center;
+
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+}
+
+.grid-item {
     border-style: solid;
     border-color: black;
     border-width: 1px;
+    background-color: #293145;
+}
+
+.option-card {
+    height: 350px;
+    padding: 5px;
+    margin: 2px;
+    
 }
 
 #url-input {
@@ -27,5 +40,16 @@ section {
 .getRdfButton {
     margin : auto;
 
+}
+
+.footer {
+    text-align: center;
+    height: 30px;
+    margin: 2px, 5px, 0px, 2px;
+    
+}
+
+.startButton {
+margin-top: 5px;
 }
 

@@ -12,46 +12,55 @@
 
 </head>
 <body>
-    <!-- TODO Adding Grid for responsivenes-->
-    <h1>Pipe1</h1>
-    <section id="url-input">
-        <h3>Quelle</h3>
-        <input type="text" id="url-1" class="url" name="url-1" />
-        <button type="button" class="getRdfButton">Get RDF</button>
-        <input type="text" id="url-2" class="url" name="url-2">
-        <button type="button" class="getRdfButton">Get RDF</button>
-        <input type="text" id="url-3" class="url" name="url-3">
-        <button type="button" class="getRdfButton">Get RDF</button>
+
+    <div class="header grid-item">
+        <h1>Pipe1</h1>
+    </div>
+    <div class="grid-container">
+        <!-- TODO Adding Grid for responsivenes-->
+        <div class="grid-item option-card" id="url-input">
+            <h3>Quelle</h3>
+            <input type="text" id="url-1" class="url" name="url-1" />
+            <button type="button" class="getRdfButton">Get RDF</button>
+            <input type="text" id="url-2" class="url" name="url-2">
+            <button type="button" class="getRdfButton">Get RDF</button>
+            <input type="text" id="url-3" class="url" name="url-3">
+            <button type="button" class="getRdfButton">Get RDF</button>
 
 
-    </section>
-
-    <section id="mapping">
-        <h3>Mapping</h3>
-        <div>
-            <!-- TODO Buttongroup-->
-            <label>Preset</label>
-            <input type="radio" id="radio-preset" value="preset">
         </div>
-        <div>
-            <label>Custom</label>
-            <input type="radio" id="radio-custom" value="custom">
+
+        <div class="grid-item option-card" id="mapping">
+            <h3>Mapping</h3>
+            <div>
+                <!-- TODO Buttongroup-->
+                <label>Preset</label>
+                <input type="radio" id="radio-preset" value="preset">
+            </div>
+            <div>
+                <label>Custom</label>
+                <input type="radio" id="radio-custom" value="custom">
+            </div>
         </div>
-    </section>
 
-    <section id="rdf-collection">
-        <h3>RDF Collection</h3>
-    </section>
+        <div class="grid-item option-card" id="rdf-collection">
+            <h3>RDF Collection</h3>
+        </div>
 
-    <section id="senke">
-        <h3>Senke</h3>
+        <div class="grid-item option-card" id="senke">
+            <h3>Senke</h3>
 
-        <label>Url</label>
-        <input type="text" id="url-3" class="url" name="url-3">
+            <label>Url</label>
+            <input type="text" id="url-3" class="url" name="url-3">
+            <br>
+            <label>IP-Adress</label>
+            <input type="text" id="url-3" class="url" name="url-3">
 
-        <label>IP-Adress</label>
-        <input type="text" id="url-3" class="url" name="url-3">
-
-    </section>
+        </div>
+    </div>
+        <div class="grid-item footer">
+            <button type="button" class="startButton">Start Process! </button>
+        </div>
+    
 </body>
 </html>
