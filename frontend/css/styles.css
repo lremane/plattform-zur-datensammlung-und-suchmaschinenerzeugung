@@ -11,7 +11,7 @@ body {
 
 .grid-container {
     display: grid;
-    grid-template-columns: auto auto auto auto;
+    grid-template-columns: 25% 25% 25% 25%;
 }
 
 .grid-item {
@@ -47,6 +47,10 @@ body {
     height: 30px;
     margin: 2px, 5px, 0px, 2px;
     
+}
+
+.senken-label {
+width: 50px;
 }
 
 .startButton {
