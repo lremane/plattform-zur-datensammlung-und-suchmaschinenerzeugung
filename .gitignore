@@ -1,6 +1,6 @@
 # exclude 
 *.backup
-<<<<<<< .gitignore
+
 qa/
 
 # for testing 
@@ -8,4 +8,3 @@ qa/
 
 .idea/
 config/
->>>>>>> .gitignore
