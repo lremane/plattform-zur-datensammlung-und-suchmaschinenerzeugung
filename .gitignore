@@ -5,6 +5,7 @@ qa/
 
 # for testing 
 *.nt
+*.log
 
 .idea/
 config/
