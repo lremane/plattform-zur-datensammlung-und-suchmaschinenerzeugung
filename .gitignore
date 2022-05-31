@@ -1,3 +1,11 @@
 # exclude 
 *.backup
+<<<<<<< .gitignore
 qa/
+
+# for testing 
+*.nt
+
+.idea/
+config/
+>>>>>>> .gitignore
