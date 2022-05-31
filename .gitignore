@@ -1,4 +1,8 @@
 # exclude 
 *.backup
+
+# for testing 
+*.nt
+
 .idea/
 config/
