@@ -1,5 +1,11 @@
 # exclude 
 *.backup
+
+qa/
+
 # for testing 
 *.nt
 *.log
+
+.idea/
+config/
