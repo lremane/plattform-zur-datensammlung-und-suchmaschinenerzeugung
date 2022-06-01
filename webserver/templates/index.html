@@ -1,1 +1,76 @@
-<a href="{{ url_for('form') }}"><button>start here</button></a>
+﻿<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PzDuS</title>
+
+    <!-- Stylesheet + Bootstrap-->
+    <link rel="stylesheet" href="css/styles.css">
+
+    <!-- Javaskript-->
+
+</head>
+<body>
+
+    <div class="header grid-item">
+        <h1>Pipe1</h1>
+    </div>
+    <div class="grid-container">
+        <!-- TODO Adding Grid for responsivenes-->
+        <div class="grid-item option-card" id="url-input">
+            <h3>Quelle</h3>
+            <input type="text" id="url-1" class="url" name="url-1" />
+            <button type="button" class="getRdfButton">Get RDF</button>
+            <br>
+            <input type="text" id="url-2" class="url" name="url-2">
+            <button type="button" class="getRdfButton">Get RDF</button>
+            <br>
+            <input type="text" id="url-3" class="url" name="url-3">
+            <button type="button" class="getRdfButton">Get RDF</button>
+
+
+        </div>
+
+        <div class="grid-item option-card" id="mapping">
+            <h3>Mapping</h3>
+            <div>
+                <!-- TODO Buttongroup-->
+                <label>Preset</label>
+                <input type="radio" id="radio-preset" value="preset">
+            </div>
+            <div>
+                <label>Custom</label>
+                <input type="radio" id="radio-custom" value="custom">
+            </div>
+        </div>
+
+        <div class="grid-item option-card" id="rdf-collection">
+            <h3>RDF Collection</h3>
+            <p>
+                placeholder for ???
+                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
+                invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
+                At vero eos et accusam et justo duo dolores et ea rebum. 
+                Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor
+                sit amet. Lorem ipsum dolor sit amet, consetet
+            </p>
+        </div>
+
+        <div class="grid-item option-card" id="senke">
+            <h3>Senke</h3>
+
+            <label class="senken-label">Url</label>
+            <input type="text" id="url-3" class="url" name="url-3">
+            <br>
+            <label class="senken-label">IP-Adress</label>
+            <input type="text" id="url-3" class="url" name="url-3">
+
+        </div>
+    </div>
+        <div class="grid-item footer">
+            <button type="button" class="startButton">Start Process! </button>
+        </div>
+    
+</body>
+</html>
