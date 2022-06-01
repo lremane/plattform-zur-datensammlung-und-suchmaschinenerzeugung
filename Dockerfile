@@ -6,7 +6,7 @@ WORKDIR /home/qauser
 
 ENV PATH="/home/qauser/.local/bin:${PATH}"
 
-RUN pip install --upgrade pip
+RUN pip install api-client --upgrade pip
 RUN pip --version
 
 COPY requirements.txt .
