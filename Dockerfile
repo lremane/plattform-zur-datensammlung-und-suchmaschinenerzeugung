@@ -7,6 +7,8 @@ WORKDIR /home/qauser
 ENV PATH="/home/qauser/.local/bin:${PATH}"
 
 RUN pip install --upgrade pip
+RUN pip --version
+
 COPY requirements.txt .
 COPY --chown=qauser:qauser requirements.txt requirements.txt
 RUN pip install --user -r requirements.txt
