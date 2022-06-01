@@ -1,4 +1,5 @@
-from flask import Flask,render_template,request
+from QAclient.client import QAClient
+from flask import Flask, render_template, request, jsonify
 
 app = Flask(__name__, template_folder='templates', static_folder='css')
 app.config['TEMPLATES_AUTO_RELOAD'] = True
@@ -7,17 +8,22 @@ app.config['TEMPLATES_AUTO_RELOAD'] = True
 def home():
     return render_template('index.html')
 
-@app.route('/form')
-def form():
-    return render_template('form.html')
+@app.route('/qaclient')
+def index():
+  return render_template('qaclient.html')
 
-@app.route('/data/', methods = ['POST', 'GET'])
-def data():
-    if request.method == 'GET':
-        return f"The URL /data is accessed directly. Try going to '/form' to submit form"
-    if request.method == 'POST':
-        form_data = request.form
-        return render_template('data.html',form_data = form_data)
+@app.route('/sendQAClient', methods=['POST', 'GET'])
+def sendQAClient():
+  qaclient     = QAClient()
+  access_token = ''
+  if request.method == 'POST':
+    username     = request.get_json()[0]['username']
+    password     = request.get_json()[1]['password']
+    access_token = qaclient.login(username, password)['accessToken']
+
+  results = {'fetchedData': access_token}
+
+  return jsonify(results)
 
 if __name__ == '__main__':
 	app.run(debug = True, host = '0.0.0.0', port = 5000)
