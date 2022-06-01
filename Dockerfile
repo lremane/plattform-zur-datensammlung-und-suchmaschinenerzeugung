@@ -1,11 +1,12 @@
 FROM python:3.10.4
 
-RUN adduser --disabled-password --disabled-login qauser
+RUN useradd -ms /bin/bash qauser
 USER qauser
+WORKDIR /home/qauser
+
 ENV PATH="/home/qauser/.local/bin:${PATH}"
 
-RUN pip3 install --upgrade pip
-WORKDIR /home/qauser
+RUN pip install --upgrade pip
 COPY requirements.txt .
 COPY --chown=qauser:qauser requirements.txt requirements.txt
 RUN pip install --user -r requirements.txt
