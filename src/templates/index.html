@@ -9,7 +9,28 @@
     <link rel="stylesheet" href="css/styles.css">
 
     <!-- Javaskript-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
+    <script>
+      $(function(){
+        $('#js-crawler-luncher').on('click', function(){
+          var url = $('#url-4').val();
+              $.ajax({
+              type: 'POST',
+              url: '/crawler-run',
+              data: JSON.stringify(url),
+              contentType: 'application/json',
+              dataType: 'json',
+              success: function() {
+                alert("Success!");
+              },
+              error: function() {
+                alert("something is wrong");
+              }
+            });
+          });
+        });
+      </script>
 </head>
 <body>
 
@@ -28,7 +49,9 @@
             <br>
             <input type="text" id="url-3" class="url" name="url-3">
             <button type="button" class="getRdfButton">Get RDF</button>
-
+						<br>
+            <input type="text" id="url-4" class="url" name="url-4">
+            <button type="button" class="getRdfButton" id="js-crawler-luncher">Get RDF</button>
 
         </div>
 

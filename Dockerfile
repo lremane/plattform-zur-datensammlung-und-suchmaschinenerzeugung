@@ -14,5 +14,5 @@ COPY --chown=qauser:qauser requirements.txt requirements.txt
 RUN pip install --user -r requirements.txt
 
 COPY --chown=qauser:qauser . .
-COPY webserver/ .
+COPY src/ .
 CMD ["python", "app.py"]
