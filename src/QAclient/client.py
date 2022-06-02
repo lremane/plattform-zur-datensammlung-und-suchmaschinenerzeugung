@@ -1,29 +1,37 @@
 import requests
+import config
 from apiclient import endpoint
 
-@endpoint(base_url='https://qanswer-core1.univ-st-etienne.fr/api/')
-class Endpoint:
-  login = 'user/signin'
-  upload = 'dataset/upload'
-  index = 'dataset/index'
-  remove = 'dataset/remove'
-  update = 'dataset/edit'
 
+# @endpoint(base_url=config.url)
+@endpoint(base_url='https://qanswer-core1.univ-st-etienne.fr/api/')
+
+class Endpoint:
+	login = 'user/signin'
+	upload = 'dataset/upload'
+	index = 'dataset/index'
+	remove = 'dataset/remove'
+	update = 'dataset/edit'
 
 class QAClient:
 	def __init__(self):
+		# self.token = self.login()
 		self.token = self.login('', '')
 
 	@staticmethod
 	def login(username, password):
 		json_data = {
-			'usernameOrEmail': username,
-			'password': 			 password
+			'usernameOrEmail': f'{config.username}',
+			'password': f'{config.password}'
 		}
-
+		# json_data = {
+		# 	'usernameOrEmail': username,
+		# 	'password': password
+		# }
 		response = requests.post(Endpoint.login, json=json_data)
 
-		return response.json()
+		# return response.json()
+		return response.json()['accessToken']
 
 	def new_dataset(self, set_name, file_loc):
 		headers = {
