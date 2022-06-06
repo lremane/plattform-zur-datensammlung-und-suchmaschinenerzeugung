@@ -7,7 +7,7 @@ class Endpoint:
   upload = 'dataset/upload'
   index = 'dataset/index'
   remove = 'dataset/remove'
-  update = 'dataset/edit'
+  update = 'dataset/edit' 
 
 
 class QAClient:

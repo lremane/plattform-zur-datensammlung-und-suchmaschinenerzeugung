@@ -8,28 +8,28 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
   <script>
-    $(function(){
-      $('#js-qaclient-luncher').on('click', function(){
-        var username 		= $('#inputUsername').val(),
-            password 		= $('#inputPassword').val(),
-            server_data = [ {"username": username}, {"password": password} ];
-    
-            $.ajax({
-            type: 				'POST',
-            url: 					'/sendQAClient',
-            data: 				JSON.stringify(server_data),
-            contentType: 'application/json',
-            dataType: 	 'json',
-            success: function(e) {
-              alert("EXAMPLE:\nSuccess!\n accessToken: " + e.fetchedData);
-            },
-            error: function(e) {
-              alert("username, email or Password is wrong");
-            }
-          });
+      $(function(){
+        $('#js-qaclient-luncher').on('click', function(){
+            var username 		= $('#inputUsername').val(), 
+                password 		= $('#inputPassword').val(),
+                server_data = [ {"username": username}, {"password": password} ];
+        
+                $.ajax({
+                  type: 				'POST',
+                  url: 					'/sendQAClient',
+                  data: 				JSON.stringify(server_data),
+                  contentType: 'application/json',
+                  dataType: 	 'json',
+                  success: function(e) {
+                    alert("EXAMPLE:\nSuccess!\n accessToken: " + e.fetchedData);
+                  },
+                  error: function(e) {
+                    alert("username, email or Password is wrong");
+                  }
+                });
         });
       });
-    </script>
+  </script>
     </head>
     <body>
 
