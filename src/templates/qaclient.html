@@ -15,15 +15,15 @@
             server_data = [ {"username": username}, {"password": password} ];
     
             $.ajax({
-            type: 				'POST',
-            url: 					'/sendQAClient',
-            data: 				JSON.stringify(server_data),
+            type: 'POST',
+            url: '/sendQAClient',
+            data: JSON.stringify(server_data),
             contentType: 'application/json',
-            dataType: 	 'json',
+            dataType: 'json',
             success: function(e) {
               alert("EXAMPLE:\nSuccess!\n accessToken: " + e.fetchedData);
             },
-            error: function(e) {
+            error: function() {
               alert("username, email or Password is wrong");
             }
           });
