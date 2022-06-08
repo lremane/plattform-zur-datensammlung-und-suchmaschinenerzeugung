@@ -1,82 +1,81 @@
 import requests
-import config
 from apiclient import endpoint
 
-
 # @endpoint(base_url=config.url)
-@endpoint(base_url='https://qanswer-core1.univ-st-etienne.fr/api/')
+@endpoint(base_url = 'https://qanswer-core1.univ-st-etienne.fr/api/')
 
 class Endpoint:
-	login = 'user/signin'
-	upload = 'dataset/upload'
-	index = 'dataset/index'
-	remove = 'dataset/remove'
-	update = 'dataset/edit'
+  login  = 'user/signin'
+  upload = 'dataset/upload'
+  index  = 'dataset/index'
+  remove = 'dataset/remove'
+  update = 'dataset/edit'
 
 class QAClient:
-	def __init__(self):
-		# self.token = self.login()
-		self.token = self.login('', '')
+  def __init__(self):
+    self.token = self.login('', '')
 
-	@staticmethod
-	def login(username, password):
-		json_data = {
-			'usernameOrEmail': f'{config.username}',
-			'password': f'{config.password}'
-		}
-		# json_data = {
-		# 	'usernameOrEmail': username,
-		# 	'password': password
-		# }
-		response = requests.post(Endpoint.login, json=json_data)
+  @staticmethod
+  def login(username, password):
+    json_data = {
+      'usernameOrEmail': username,
+      'password':        password
+      }
 
-		# return response.json()
-		return response.json()['accessToken']
+    response = requests.post(Endpoint.login, json = json_data)
 
-	def new_dataset(self, set_name, file_loc):
-		headers = {
-			'Authorization': f'Bearer {self.token}'
-		}
+    try:
+      if not response.json()['accessToken']:
+        return '0'
+      else:
+        return response.json()
+    except:
+      return '0'
 
-		params = {
-			'dataset': set_name
-		}
+  def new_dataset(self, set_name, file_loc):
+    headers = {
+      'Authorization': f'Bearer {self.token}'
+    }
 
-		files = {
-			'file': open(file_loc, 'rb')
-		}
+    params = {
+      'dataset': set_name
+    }
 
-		response = requests.post(Endpoint.upload, params=params, headers=headers, files=files)
+    files = {
+      'file': open(file_loc, 'rb')
+    }
 
-		self.index_dataset(set_name)
+    response = requests.post(Endpoint.upload, params=params, headers=headers, files=files)
 
-		return response.status_code
+    self.index_dataset(set_name)
 
-	def index_dataset(self, set_name):
-		headers = {
-			'Authorization': f'Bearer {self.token}'
-		}
+    return response.status_code
 
-		json_data = {
-			'dataset': f'{set_name}'
-		}
+  def index_dataset(self, set_name):
+    headers = {
+      'Authorization': f'Bearer {self.token}'
+    }
 
-		response = requests.post(Endpoint.index, headers=headers, json=json_data)
+    json_data = {
+      'dataset': f'{set_name}'
+    }
 
-		return response.status_code
+    response = requests.post(Endpoint.index, headers=headers, json=json_data)
 
-	def remove_dataset(self, set_name):
-		headers = {
-			'Authorization': f'Bearer {self.token}'
-		}
+    return response.status_code
 
-		params = {
-			'dataset': f'{set_name}'
-		}
+  def remove_dataset(self, set_name):
+    headers = {
+      'Authorization': f'Bearer {self.token}'
+    }
 
-		response = requests.post(Endpoint.remove, headers=headers, params=params)
+    params = {
+      'dataset': f'{set_name}'
+    }
 
-		return response.status_code
+    response = requests.post(Endpoint.remove, headers=headers, params=params)
 
-	def update_dataset(self, set_name, file_loc):
-		pass
+    return response.status_code
+
+  def update_dataset(self, set_name, file_loc):
+    pass

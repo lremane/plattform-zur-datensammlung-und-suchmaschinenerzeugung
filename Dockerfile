@@ -15,4 +15,4 @@ RUN pip install --user -r requirements.txt
 
 COPY --chown=qauser:qauser . .
 COPY src/ .
-CMD ["python", "app.py"]
+CMD ["flask", "run", "--host", "0.0.0.0"]

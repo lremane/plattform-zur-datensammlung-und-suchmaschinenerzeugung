@@ -57,3 +57,16 @@ width: 50px;
 margin-top: 5px;
 }
 
+#loading {
+	display: block;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 100;
+	width: 100vw;
+	height: 100vh;
+	background-color: rgba(192, 192, 192, 0.349);
+	background-image: url('/static/spinner2.gif');
+	background-repeat: no-repeat;
+	background-position: center;
+}
