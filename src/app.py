@@ -1,4 +1,4 @@
-from crawler.rdfaCrawler import rdfaCrawler
+from crawler.RdfaCrawler import RdfaCrawler
 from QAclient.client import QAClient
 from flask import Flask, render_template, request, jsonify
 
@@ -21,8 +21,8 @@ def crawler_run():
   if request.method == 'POST':
     url      = request.get_json()[0]['url']
     filename = request.get_json()[1]['filename']
-    crawler  = rdfaCrawler()
-    crawler.parseRdfa(url, filename)
+    crawler  = RdfaCrawler()
+    result = crawler.get_rdfa(url)
 
   return jsonify('ok')
 

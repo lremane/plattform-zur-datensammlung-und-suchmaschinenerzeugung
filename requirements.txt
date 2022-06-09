@@ -1,3 +1,6 @@
 Flask
 api-client
 PyYAML
+
+requests
+apiclient
