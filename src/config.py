@@ -3,7 +3,7 @@ from os.path import exists
 import yaml
 import os
 
-config_path = "config"
+config_path = "conf"
 
 
 def create_config_pipeline(name: str, config: dict) -> None:

@@ -8,6 +8,6 @@ qa/
 *.log
 
 .idea/
-config/
+/conf/
 
 __pycache__/
