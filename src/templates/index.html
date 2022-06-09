@@ -6,34 +6,14 @@
     <title>PzDuS</title>
 
     <!-- Stylesheet + Bootstrap-->
-    <link rel="stylesheet" href="css/styles.css">
-
-    <!-- Javaskript-->
+    <link rel="stylesheet" href="static/css/index.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
-    <script>
-      $(function(){
-        $('#js-crawler-luncher').on('click', function(){
-          var url = $('#url-4').val();
-              $.ajax({
-              type: 'POST',
-              url: '/crawler-run',
-              data: JSON.stringify(url),
-              contentType: 'application/json',
-              dataType: 'json',
-              success: function() {
-                alert("Success!");
-              },
-              error: function() {
-                alert("something is wrong");
-              }
-            });
-          });
-        });
-      </script>
+    <script type="text/javascript" src="{{url_for('static', filename='/js/index.js')}}"></script>
+
 </head>
 <body>
-
+  <div id="loading" style="display: none"></div>
     <div class="header grid-item">
         <h1>Pipe1</h1>
     </div>
@@ -41,18 +21,9 @@
         <!-- TODO Adding Grid for responsivenes-->
         <div class="grid-item option-card" id="url-input">
             <h3>Quelle</h3>
-            <input type="text" id="url-1" class="url" name="url-1" />
-            <button type="button" class="getRdfButton">Get RDF</button>
-            <br>
-            <input type="text" id="url-2" class="url" name="url-2">
-            <button type="button" class="getRdfButton">Get RDF</button>
-            <br>
-            <input type="text" id="url-3" class="url" name="url-3">
-            <button type="button" class="getRdfButton">Get RDF</button>
-						<br>
-            <input type="text" id="url-4" class="url" name="url-4">
+            <input placeholder="URL" type="text" id="url" class="url" name="url" value="https://www.wikidata.org/wiki/Q2079">
+            <input placeholder="filename" type="text" id="file-name" class="file-name" name="file-name">
             <button type="button" class="getRdfButton" id="js-crawler-luncher">Get RDF</button>
-
         </div>
 
         <div class="grid-item option-card" id="mapping">
@@ -91,9 +62,9 @@
 
         </div>
     </div>
-        <div class="grid-item footer">
-            <button type="button" class="startButton">Start Process! </button>
-        </div>
+    <div class="grid-item footer">
+        <button type="button" class="startButton">Start Process! </button>
+    </div>
     
 </body>
 </html>

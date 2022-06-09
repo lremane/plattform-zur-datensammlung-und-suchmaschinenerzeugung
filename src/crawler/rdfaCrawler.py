@@ -5,7 +5,7 @@ import requests
 class rdfaCrawler:
 
     def parseRdfa(self, site : str, name : str) -> None:
-        
+
         if not os.path.exists("./rdfData"):
             os.mkdir("./rdfData")
 

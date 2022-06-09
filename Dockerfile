@@ -6,8 +6,7 @@ WORKDIR /home/qauser
 
 ENV PATH="/home/qauser/.local/bin:${PATH}"
 
-RUN pip install api-client PyYAML --upgrade pip
-RUN pip --version
+RUN pip install --upgrade pip
 
 COPY requirements.txt .
 COPY --chown=qauser:qauser requirements.txt requirements.txt
@@ -15,4 +14,4 @@ RUN pip install --user -r requirements.txt
 
 COPY --chown=qauser:qauser . .
 COPY src/ .
-CMD ["python", "app.py"]
+CMD ["flask", "run", "--host", "0.0.0.0"]
