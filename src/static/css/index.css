@@ -65,8 +65,8 @@ margin-top: 5px;
 	z-index: 100;
 	width: 100vw;
 	height: 100vh;
-	background-color: rgba(192, 192, 192, 0.349);
-	background-image: url('/static/spinner2.gif');
+	background-color: rgba(0, 0, 0, 0);
+	background-image: url('/static/spinner.gif');
 	background-repeat: no-repeat;
 	background-position: center;
 }
