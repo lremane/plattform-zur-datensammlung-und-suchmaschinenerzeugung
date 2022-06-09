@@ -25,7 +25,7 @@ def load_config_general() -> dict:
 def create_config(path: str, name: str, config: dict) -> None:
     os.makedirs(path, exist_ok=True)
     with open(f"{path}/{name}.yml", 'w') as file:
-        file.write(yaml.dump(config))
+        file.write(yaml.dump(config, sort_keys=False))
 
 
 def load_config(path: str, name: str) -> dict:
@@ -33,6 +33,13 @@ def load_config(path: str, name: str) -> dict:
         return yaml.safe_load(stream)
 
 
+def update_config(path: str, name: str, update: dict) -> None:
+    conf = load_config(path, name)
+    conf.update(update)
+    create_config(path, name, conf)
+
+
+# Example
 create_config_pipeline("testpipe", {
     "source": {
         "type": "website",
