@@ -59,5 +59,8 @@ if not exists(f"{config_path}/general.yml"):
             "flask": {
                 "TEMPLATES_AUTO_RELOAD": True,
             },
-            "theme": "dark",
+            "qanswer": {
+                "username": "test",
+                "password": "not_secure!!1"
+            },
         })

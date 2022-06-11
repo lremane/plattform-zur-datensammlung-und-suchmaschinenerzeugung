@@ -12,8 +12,8 @@ class Endpoint:
   update = 'dataset/edit'
 
 class QAClient:
-  def __init__(self):
-    self.token = self.login('', '')
+  def __init__(self, username, password):
+    self.token = self.login(username, password)
 
   @staticmethod
   def login(username, password):

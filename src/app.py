@@ -1,5 +1,5 @@
-from crawler.rdfaCrawler import rdfaCrawler
-from QAclient.client import QAClient
+from src.crawler.rdfaCrawler import rdfaCrawler
+from src.QAclient.client import QAClient
 from flask import Flask, render_template, request, jsonify
 from src import config
 
@@ -30,7 +30,8 @@ def crawler_run():
 
 @app.route('/tonys-page', methods=['POST'])
 def check_login_data():
-    qaclient = QAClient()
+    conf = config.load_config_general()
+    qaclient = QAClient(conf['qanswer']['username'], conf['qanswer']['password'])
     has_account = ''
 
     if request.method == 'POST':
