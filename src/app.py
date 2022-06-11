@@ -17,15 +17,20 @@ def index():
     return render_template('qaclient.html')
 
 
-@app.route('/crawler-run', methods=['POST', 'GET'])
+@app.route('/crawler-run', methods=['POST'])
 def crawler_run():
-    if request.method == 'POST':
-        url = request.get_json()[0]['url']
-        filename = request.get_json()[1]['filename']
-        crawler = rdfaCrawler()
-        crawler.parseRdfa(url, filename)
-
-    return jsonify('ok')
+    url = request.get_json()[0]['url']
+    filename = request.get_json()[1]['filename']
+    crawler = RdfaCrawler()
+    result = crawler.get_rdfa(url)
+    if result:
+        if not os.path.exists("./rdfData"):
+            os.mkdir("./rdfData")
+        with open(f"./rdfData/{filename}.nt", "w") as f:
+            f.write(result)
+        return jsonify('ok')
+    else:
+        return jsonify('Error!')
 
 
 @app.route('/tonys-page', methods=['POST'])
@@ -43,3 +48,7 @@ def check_login_data():
             return render_template('error.html')
         else:
             return render_template('index.html')
+
+
+if __name__ == '__main__':
+    app.run(debug=True, host='0.0.0.0', port=5000)
