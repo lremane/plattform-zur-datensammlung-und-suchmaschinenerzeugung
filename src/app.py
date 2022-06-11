@@ -1,7 +1,9 @@
-from src.crawler.rdfaCrawler import rdfaCrawler
+import os
+
 from src.QAclient.client import QAClient
 from flask import Flask, render_template, request, jsonify
 from src import config
+from src.crawler.RdfaCrawler import RdfaCrawler
 
 app = Flask(__name__, template_folder='templates', static_folder='static')
 app.config.update(config.load_config_general().get('flask'))
