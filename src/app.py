@@ -37,20 +37,12 @@ def crawler_run():
 
 @app.route('/tonys-page', methods=['POST'])
 def check_login_data():
-    conf = config.load_config_general()
-    qaclient = QAClient(conf['qanswer']['username'], conf['qanswer']['password'])
-    has_account = ''
+    qaclient = QAClient(request.form.get('username'), request.form.get('password'))
 
-    if request.method == 'POST':
-        username = request.form.get('username')
-        password = request.form.get('password')
-        has_account = qaclient.login(username, password)
-
-        if has_account == '0':
-            return render_template('error.html')
-        else:
-            return render_template('index.html')
-
+    if qaclient.token:
+        return render_template('index.html')
+    else:
+        return render_template('error.html')
 
 if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0', port=5000)
