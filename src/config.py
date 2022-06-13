@@ -1,7 +1,9 @@
+from os.path import exists
+
 import yaml
 import os
 
-config_path = "config"
+config_path = "conf"
 
 
 def create_config_pipeline(name: str, config: dict) -> None:
@@ -22,15 +24,22 @@ def load_config_general() -> dict:
 
 def create_config(path: str, name: str, config: dict) -> None:
     os.makedirs(path, exist_ok=True)
-    with open(f"{path}/{name}.yaml", 'w') as file:
-        file.write(yaml.dump(config))
+    with open(f"{path}/{name}.yml", 'w') as file:
+        file.write(yaml.dump(config, sort_keys=False))
 
 
 def load_config(path: str, name: str) -> dict:
-    with open(f"{path}/{name}.yaml", "r") as stream:
+    with open(f"{path}/{name}.yml", "r") as stream:
         return yaml.safe_load(stream)
 
 
+def update_config(path: str, name: str, update: dict) -> None:
+    conf = load_config(path, name)
+    conf.update(update)
+    create_config(path, name, conf)
+
+
+# Example
 create_config_pipeline("testpipe", {
     "source": {
         "type": "website",
@@ -43,11 +52,15 @@ create_config_pipeline("testpipe", {
     },
 })
 
-create_config_general({
-    "webserver": {
-        "port": 8080,
-    },
-    "theme": "dark",
-})
-
-print(load_config_general())
+# Creates general config if not existent
+if not exists(f"{config_path}/general.yml"):
+    create_config_general(
+        {
+            "flask": {
+                "TEMPLATES_AUTO_RELOAD": True,
+            },
+            "qanswer": {
+                "username": "test",
+                "password": "not_secure!!1"
+            },
+        })

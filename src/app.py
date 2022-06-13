@@ -1,11 +1,12 @@
 import os
 
-from crawler.RdfaCrawler import RdfaCrawler
-from QAclient.client import QAClient
+from src.QAclient.client import QAClient
 from flask import Flask, render_template, request, jsonify
+from src import config
+from src.crawler.RdfaCrawler import RdfaCrawler
 
 app = Flask(__name__, template_folder='templates', static_folder='static')
-app.config['TEMPLATES_AUTO_RELOAD'] = True
+app.config.update(config.load_config_general().get('flask'))
 
 
 @app.route("/")
@@ -36,7 +37,8 @@ def crawler_run():
 
 @app.route('/tonys-page', methods=['POST'])
 def check_login_data():
-    qaclient = QAClient()
+    conf = config.load_config_general()
+    qaclient = QAClient(conf['qanswer']['username'], conf['qanswer']['password'])
     has_account = ''
 
     if request.method == 'POST':
