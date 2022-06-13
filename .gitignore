@@ -4,11 +4,10 @@
 
 # folders
 .idea/
-.vscode/
-
-config/
+/conf/
 __pycache__/
 node_modules/
+/rdfData/
 
 # vs code (JS)
 package-lock.json

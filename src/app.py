@@ -1,11 +1,12 @@
 import os
 
-from crawler.RdfaCrawler import RdfaCrawler
-from QAclient.client import QAClient
+from src.QAclient.client import QAClient
 from flask import Flask, render_template, request, jsonify
+from src import config
+from src.crawler.RdfaCrawler import RdfaCrawler
 
 app = Flask(__name__, template_folder='templates', static_folder='static')
-app.config['TEMPLATES_AUTO_RELOAD'] = True
+app.config.update(config.load_config_general().get('flask'))
 
 
 @app.route("/")
