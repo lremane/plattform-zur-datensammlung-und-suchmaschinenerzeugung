@@ -1,42 +1,48 @@
-from crawler.rdfaCrawler import rdfaCrawler
+import os
+
 from QAclient.client import QAClient
 from flask import Flask, render_template, request, jsonify
+import config
+from crawler.RdfaCrawler import RdfaCrawler
 
-app = Flask(__name__, template_folder = 'templates', static_folder = 'static')
-app.config['TEMPLATES_AUTO_RELOAD'] = True
+app = Flask(__name__, template_folder='templates', static_folder='static')
+app.config.update(config.load_config_general().get('flask'))
 
-if __name__ == '__main__':
-  app.run(debug = True, host = '0.0.0.0', port = 5000)
 
 @app.route("/")
 def home():
-  return render_template('login.html')
+    return render_template('login.html')
+
 
 @app.route('/qaclient')
 def index():
-  return render_template('qaclient.html')
+    return render_template('qaclient.html')
 
-@app.route('/crawler-run', methods=['POST', 'GET'])
+
+@app.route('/crawler-run', methods=['POST'])
 def crawler_run():
-  if request.method == 'POST':
-    url      = request.get_json()[0]['url']
+    url = request.get_json()[0]['url']
     filename = request.get_json()[1]['filename']
-    crawler  = rdfaCrawler()
-    crawler.parseRdfa(url, filename)
-
-  return jsonify('ok')
-
-@app.route('/tonys-page', methods = ['POST'])
-def check_login_data():
-  qaclient    = QAClient()
-  has_account = ''
-
-  if request.method == 'POST':
-    username    = request.form.get('username')
-    password    = request.form.get('password')
-    has_account = qaclient.login(username, password)
-
-    if has_account == '0':
-      return render_template('error.html')
+    crawler = RdfaCrawler()
+    result = crawler.get_rdfa(url)
+    if result:
+        if not os.path.exists("./rdfData"):
+            os.mkdir("./rdfData")
+        with open(f"./rdfData/{filename}.nt", "w") as f:
+            f.write(result)
+        return jsonify('ok')
     else:
-      return render_template('index.html')
+        return jsonify('Error!')
+
+
+@app.route('/tonys-page', methods=['POST'])
+def check_login_data():
+    qaclient = QAClient(request.form.get('username'), request.form.get('password'))
+
+    if qaclient.token:
+        return render_template('index.html')
+    else:
+        return render_template('error.html')
+
+if __name__ == '__main__':
+    app.run(debug=True, host='0.0.0.0', port=5000)

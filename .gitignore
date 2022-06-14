@@ -1,13 +1,15 @@
-# exclude 
-*.backup
-
-qa/
-
 # for testing 
 *.nt
 *.log
 
+# folders
 .idea/
-config/
-
+/conf/
 __pycache__/
+node_modules/
+/rdfData/
+
+# vs code (JS)
+package-lock.json
+package.json
+.eslintrc.json
