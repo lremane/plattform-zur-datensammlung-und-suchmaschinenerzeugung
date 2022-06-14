@@ -30,12 +30,15 @@ $.ajax(settings).done(function (response) {
 });
 
 }
+
+/*
 function test(){
   var form = new FormData();
   form.append("file", '/path/to/file/cocktails.nt');
   //alert(String(Object.values(form)))
 
 }
+*/
 
 /*
 function upload(token){
