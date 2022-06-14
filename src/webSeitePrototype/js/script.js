@@ -25,6 +25,40 @@ password = data;
 $.ajax(settings).done(function (response) {
   console.log(response);
   const token = Object.values(response)[0];
-  alert(token);
+  alert(String(token));
+  upload(token);
 });
+
 }
+function test(){
+  var form = new FormData();
+  form.append("file", '/path/to/file/cocktails.nt');
+  //alert(String(Object.values(form)))
+
+}
+
+/*
+function upload(token){
+  var form = new FormData();
+  form.append("file", fileupload.files[0]);
+  debugger;
+  
+  var settings = {
+    "async": true,
+    "crossDomain": true,
+    "url": "https://qanswer-core1.univ-st-etienne.fr/api/dataset/upload?dataset=cocktails",
+    "method": "POST",
+    "headers": {
+      "Authorization": String("Bearer "+ token),
+    },
+    "processData": false,
+    "contentType": false,
+    "mimeType": "multipart/form-data",
+    "data": form
+  }
+
+  $.ajax(settings).done(function (response) {
+    console.log(response);
+  });
+}
+*/
