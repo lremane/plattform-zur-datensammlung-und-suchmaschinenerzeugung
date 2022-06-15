@@ -1,9 +1,9 @@
 import os
+import config
 
 from QAclient.client import QAClient
-from flask import Flask, render_template, request, jsonify
-import config
 from crawler.RdfaCrawler import RdfaCrawler
+from flask import Flask, render_template, request, jsonify
 
 app = Flask(__name__, template_folder='templates', static_folder='static')
 app.config.update(config.load_config_general().get('flask'))
@@ -12,15 +12,10 @@ app.config.update(config.load_config_general().get('flask'))
 qaclient = QAClient()
 crawler = RdfaCrawler()
 
+
 @app.route("/")
 def home():
     return render_template('login.html')
-
-
-@app.route('/qaclient')
-def index():
-    return render_template('qaclient.html')
-
 
 
 @app.route('/crawler-run', methods=['POST'])
@@ -36,7 +31,6 @@ def crawler_run():
         return jsonify('ok')
     else:
         return jsonify('Error!')
-
 
 
 @app.route('/upload-data', methods=['POST'])
@@ -62,6 +56,6 @@ def check_login_data():
     else:
         return render_template('error.html')
 
+
 if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0', port=5000)
-
