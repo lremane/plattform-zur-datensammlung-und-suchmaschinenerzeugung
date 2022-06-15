@@ -1,0 +1,7 @@
+# when you run flask locally, many files get generated automatically. 
+# That's cool but when it comes to docker its kind of pain in the @$$ because they get generated under the a specify permissions and when 
+# you start the docker image it wont run and you will get a wonderful error => PermissionError: [Errno 13] Permission denied
+# that's why I used dockerignore.
+
+src/conf
+src/__pycache__
