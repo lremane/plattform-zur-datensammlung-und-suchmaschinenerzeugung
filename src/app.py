@@ -15,7 +15,7 @@ crawler = RdfaCrawler()
 
 @app.route("/")
 def home():
-    return render_template('login.html')
+    return render_template('index.html')
 
 
 @app.route('/crawler-run', methods=['POST'])
@@ -47,14 +47,15 @@ def upload_data():
         pass
 
 
-@app.route('/tonys-page', methods=['POST'])
+@app.route('/check_login_data', methods=['POST'])
 def check_login_data():
-    qaclient.login(request.form.get('username'), request.form.get('password'))
+    qaclient.login(request.get_json()[0]['username'],
+                   request.get_json()[1]['password'])
 
     if qaclient.token:
-        return render_template('index.html')
+        return jsonify({'res': '1'})
     else:
-        return render_template('error.html')
+        return jsonify({'res': '0'})
 
 
 if __name__ == '__main__':
