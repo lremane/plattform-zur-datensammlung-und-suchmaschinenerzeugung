@@ -35,6 +35,8 @@ Verwendung:
 
 ## 3.3 Gitlab Action
 
+[.gitlab-ci.yml](https://gitlab-softwareprojekt.fim.htwk-leipzig.de/pdus/plattform-zur-datensammlung-und-suchmaschinenerzeugung/-/blob/developement/.gitlab-ci.yml)
+
 ## 4.1 Problemdefinition & Produktvison
 
 Problemdefinition:
@@ -47,7 +49,10 @@ Darauf folgend ist eine Suchanfrage auf den Daten über QAnswer möglich und die
 
 ## 4.2 Design-Thinking-Prototyp
 
-[Prototyp](https://gitlab-softwareprojekt.fim.htwk-leipzig.de/pdus/plattform-zur-datensammlung-und-suchmaschinenerzeugung#problemdef)
+Webapplikation - GUI
+
+![image](https://www.imn.htwk-leipzig.de/~jkindler/PDuS/img-2.png)
+
 
 ## 4.3 Erfüllte funktionale und nicht funktionale Anforderungen
 
