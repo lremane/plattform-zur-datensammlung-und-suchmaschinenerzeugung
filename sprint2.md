@@ -24,16 +24,6 @@ QEnable
 
 [Tutorial](https://gitlab-softwareprojekt.fim.htwk-leipzig.de/pdus/plattform-zur-datensammlung-und-suchmaschinenerzeugung/-/blob/developement/README.md)
 
-Nachdem Sie sich auf unserer Webseite befinden, müssen Sie sich rechts in ihrer Instanz von QAnswer einloggen (Nutzername Passwort)
--> Falls Account nicht vorhanden, schlägt Login fehl.
-
-Nach dem erfolgreichen Login, verschwindet das „login-Panel“ .
-
-Nun können Sie einen Link im Rechten Fenster „Quelle“ eingeben und mit einem Namen für das Dataset in QAnswer versehen.
-Ein anschließendes betätigen des „start process!“ Buttons, wird der Crawl Vorgang gestartet und die gecrawlt rdf´s direkt an die eingeloggte Instanz von QAnswer übergeben.
-
-Nun können (abhängig von der Strukturierung des RDF) in der QA Instanz fragen auf die Webseiten beantwortet werden.
-
 ## 3.2 Docker
 
 [Dockerfile](https://gitlab-softwareprojekt.fim.htwk-leipzig.de/pdus/plattform-zur-datensammlung-und-suchmaschinenerzeugung/-/blob/developement/Dockerfile)
@@ -66,8 +56,10 @@ Webapplikation - GUI
 
 ## 4.3 Erfüllte funktionale und nicht funktionale Anforderungen
 
-> Als IT-Mitarbeiter eines Unternehmens kann ich RDF-Daten aus beliegen Websiten crawlen und diese an eine konkrete QAnswer instanz hochladen, damit ich auf diesen Daten natürlich sprachliche Fragen auf QAnswer stellen kann. (Die RDF-Daten der gecrawlten Website müssen das Alphabet von Schema.org verwenden, damit Fragen gestellt werden können)
+> Als IT-Mitarbeiter eines Unternehmens kann ich RDF-Daten aus beliebigen Websiten crawlen und diese an eine konkrete QAnswer instanz hochladen, damit ich auf diesen Daten natürlichsprachliche Fragen auf QAnswer stellen kann. (Die RDF-Daten der gecrawlten Website müssen das Alphabet von Schema.org verwenden, damit Fragen gestellt werden können)
 
 > Als IT-Mitarbeiter eines Unternehmens kann ich RDF-Daten aus einer beliebigen Website crawlen und im N-Triples Format herunterladen.
 
 ## 5. Beiträge der Teammitglieder
+
+Alle haben sich gleichermaßen an den Projektmeetings beteiligt.
