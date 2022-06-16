@@ -67,7 +67,7 @@ $(function() {
           let res = e.res;
           if (res === '1') {
             $processLauncher.prop("disabled", false);
-            $loginWrapper.css('visibility', 'hidden');
+            $loginWrapper.css('display', 'none');
           }
           alert(res === '0' ? 'Error' : 'Success');
         },
