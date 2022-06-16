@@ -30,8 +30,8 @@ QEnable
 
 Verwendung:
 
-    sudo docker build -t flask-image .
-    sudo docker run --rm -p 5000:5000 flask-image
+    docker build -t flask-image .
+    docker run --rm -p 5000:5000 flask-image
 
 ## 3.3 Gitlab Action
 
@@ -50,5 +50,9 @@ Darauf folgend ist eine Suchanfrage auf den Daten über QAnswer möglich und die
 [Prototyp](https://gitlab-softwareprojekt.fim.htwk-leipzig.de/pdus/plattform-zur-datensammlung-und-suchmaschinenerzeugung#problemdef)
 
 ## 4.3 Erfüllte funktionale und nicht funktionale Anforderungen
+
+> Als IT-Mitarbeiter eines Unternehmens kann ich RDF-Daten aus beliegen Websiten crawlen und diese an eine konkrete QAnswer instanz hochladen, damit ich auf diesen Daten natürlich sprachliche Fragen auf QAnswer stellen kann. (Die RDF-Daten der gecrawlten Website müssen das Alphabet von Schema.org verwenden, damit Fragen gestellt werden können)
+
+> Als IT-Mitarbeiter eines Unternehmens kann ich RDF-Daten aus einer beliebigen Website crawlen und im N-Triples Format herunterladen.
 
 ## 5. Beiträge der Teammitglieder
