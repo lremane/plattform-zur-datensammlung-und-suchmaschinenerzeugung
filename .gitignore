@@ -3,11 +3,12 @@
 *.log
 
 # folders
+conf/
 .idea/
-/conf/
+.vscode/
+rdfData/
 __pycache__/
 node_modules/
-/rdfData/
 
 # vs code (JS)
 package-lock.json

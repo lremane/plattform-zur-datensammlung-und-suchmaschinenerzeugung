@@ -2,7 +2,6 @@ import requests
 from apiclient import endpoint
 
 
-# @endpoint(base_url=config.url)
 @endpoint(base_url='https://qanswer-core1.univ-st-etienne.fr/api/')
 class Endpoint:
     login = 'user/signin'
@@ -13,9 +12,8 @@ class Endpoint:
 
 
 class QAClient:
-    def __init__(self, username, password):
+    def __init__(self):
         self.token = None
-        self.login(username, password)
 
     def login(self, username, password):
         json_data = {
@@ -25,7 +23,7 @@ class QAClient:
         response = requests.post(Endpoint.login, json=json_data)
         self.token = response.json().get('accessToken', None)
 
-    def new_dataset(self, set_name, file_loc):
+    def new_dataset(self, set_name: str, dataset: str) -> int:
         headers = {
             'Authorization': f'Bearer {self.token}'
         }
@@ -35,7 +33,7 @@ class QAClient:
         }
 
         files = {
-            'file': open(file_loc, 'rb')
+            'file': (f'{set_name}.nt', dataset)
         }
 
         response = requests.post(Endpoint.upload, params=params, headers=headers, files=files)
@@ -44,7 +42,7 @@ class QAClient:
 
         return response.status_code
 
-    def index_dataset(self, set_name):
+    def index_dataset(self, set_name: str) -> int:
         headers = {
             'Authorization': f'Bearer {self.token}'
         }
@@ -57,7 +55,7 @@ class QAClient:
 
         return response.status_code
 
-    def remove_dataset(self, set_name):
+    def remove_dataset(self, set_name: str) -> int:
         headers = {
             'Authorization': f'Bearer {self.token}'
         }
@@ -70,5 +68,5 @@ class QAClient:
 
         return response.status_code
 
-    def update_dataset(self, set_name, file_loc):
+    def update_dataset(self, set_name: str, file_loc: str) -> int:
         pass
