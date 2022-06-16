@@ -39,7 +39,7 @@ Der nächste Schritt ist die Ausführung des Docker-Images.
 
 `-p`: Gibt die Spezifikation des Ports an.
 
-<a name="ip" ></a>Die Webseite ist nun unter `http://172.17.0.2:<Port>` erreichbar.
+<a name="ip" ></a>Die Webseite ist nun unter `http://172.17.0.2:5000` erreichbar.
 
 
 Optional, wenn man einen Container bauen möchte: 
