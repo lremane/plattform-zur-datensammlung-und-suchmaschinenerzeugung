@@ -28,10 +28,50 @@ QEnable
 
 [Dockerfile](https://gitlab-softwareprojekt.fim.htwk-leipzig.de/pdus/plattform-zur-datensammlung-und-suchmaschinenerzeugung/-/blob/developement/Dockerfile)
 
-Verwendung:
+### 3.3.1 Quick-Start-Guide
 
-    docker build -t flask-image .
-    docker run --rm -p 5000:5000 flask-image
+    sudo docker build -t flask-image .
+    sudo docker run --rm -p 5000:5000 flask-image
+
+Weiter geht´s [hier](#ip).
+
+### 3.3.2 Ausführliches Tutorial
+
+Überprüfe, ob die Gruppe "docker" bereits existiert.
+
+    groups 
+    
+Sollte die Gruppe nicht exitieren, muss diese erstellt werden.
+
+    sudo groupadd docker
+
+
+Der Nutzer muss der Gruppe "docker" hinzugefügt werden.
+
+    usermod -aG docker $USER
+
+Es muss nun zu dem Verzeichnis des Dockerfiles navigiert und das Docker-Image gebaut werden.
+
+    docker build -t <docker image name> .
+
+Dabei muss `<docker image name>` mit einem Namen für das Docker-Image ersetzt werden. 
+
+Der nächste Schritt ist die Ausführung des Docker-Images.
+
+    docker run --rm -p 5000:5000 <docker image name>
+
+
+`--rm`: Der Docker-Container wird nach dem Verlassen gelöscht, um Platz zu sparen.
+
+`-p`: Gibt die Spezifikation des Ports an.
+
+<a name="ip" ></a>Die Webseite ist nun unter `http://172.17.0.2:<Port>`erreichbar.
+
+
+Optional, wenn man einen Container bauen möchte: 
+
+    docker start <container name>
+    docker exec -it <container name> /bin/bash
 
 ## 3.3 Gitlab Action
 
