@@ -30,7 +30,7 @@ QEnable
 
 Verwendung:
 
-    sudo docker build -t flask-image  
+    sudo docker build -t flask-image .
     sudo docker run --rm -p 5000:5000 flask-image
 
 ## 3.3 Gitlab Action
