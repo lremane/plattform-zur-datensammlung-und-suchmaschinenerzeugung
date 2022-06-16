@@ -65,13 +65,15 @@ Der nächste Schritt ist die Ausführung des Docker-Images.
 
 `-p`: Gibt die Spezifikation des Ports an.
 
-<a name="ip" ></a>Die Webseite ist nun unter `http://172.17.0.2:<Port>`erreichbar.
+<a name="ip" ></a>Die Webseite ist nun unter `http://172.17.0.2:<Port>` erreichbar.
 
 
 Optional, wenn man einen Container bauen möchte: 
 
-    docker start <container name>
-    docker exec -it <container name> /bin/bash
+    docker start <docker container name>
+    docker exec -it <docker container name> /bin/bash
+
+Dabei muss `<docker container name>` mit einem Namen für den Docker-Container ersetzt werden. 
 
 ## 3.3 Gitlab Action
 
