@@ -30,7 +30,7 @@ QEnable
 
 Verwendung:
 
-    sudo docker build -t flask-image  
+    sudo docker build -t flask-image .
     sudo docker run --rm -p 5000:5000 flask-image
 
 ## 3.3 Gitlab Action
@@ -49,6 +49,6 @@ Darauf folgend ist eine Suchanfrage auf den Daten über QAnswer möglich und die
 
 [Prototyp](https://gitlab-softwareprojekt.fim.htwk-leipzig.de/pdus/plattform-zur-datensammlung-und-suchmaschinenerzeugung#problemdef)
 
-## 4.3 Erfüllte funktionale und nicht funktionale Anforderungeen
+## 4.3 Erfüllte funktionale und nicht funktionale Anforderungen
 
 ## 5. Beiträge der Teammitglieder
