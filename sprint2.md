@@ -50,6 +50,10 @@ Der Nutzer muss der Gruppe "docker" hinzugefügt werden.
 
     usermod -aG docker $USER
 
+Dockerstart:
+
+    systemctl start docker
+
 Es muss nun zu dem Verzeichnis des Dockerfiles navigiert und das Docker-Image gebaut werden.
 
     docker build -t <docker image name> .
@@ -70,8 +74,10 @@ Der nächste Schritt ist die Ausführung des Docker-Images.
 
 Optional, wenn man einen Container bauen möchte: 
 
-    docker start <docker container name>
-    docker exec -it <docker container name> /bin/bash
+    docker container create flask-image
+    docker container list -a 
+    docker start <docker container id>
+    docker exec -it <docker container id> /bin/bash
 
 Dabei muss `<docker container name>` mit einem Namen für den Docker-Container ersetzt werden. 
 
