@@ -12,15 +12,20 @@ app.config.update(config.load_config_general().get('flask'))
 qaclient = QAClient()
 crawler = RdfaCrawler()
 
+
 @app.route("/")
 def home():
     return render_template('login.html')
 
 
+@app.route("/version")
+def version():
+    return render_template('index2.html')
+
+
 @app.route('/qaclient')
 def index():
     return render_template('qaclient.html')
-
 
 
 @app.route('/crawler-run', methods=['POST'])
@@ -36,7 +41,6 @@ def crawler_run():
         return jsonify('ok')
     else:
         return jsonify('Error!')
-
 
 
 @app.route('/upload-data', methods=['POST'])
@@ -62,6 +66,17 @@ def check_login_data():
     else:
         return render_template('error.html')
 
+
+@app.route('/crawl-your-data', methods=['POST'])
+def check_login_data_2():
+
+    qaclient.login(request.form.get('username'), request.form.get('password'))
+
+    if qaclient.token:
+        return render_template('index3.html')
+    else:
+        return render_template('error.html')
+
+
 if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0', port=5000)
-
