@@ -1,70 +1,84 @@
 ﻿<!DOCTYPE html>
 <html lang="de">
-<head>
+
+  <head>
+    <title>QEnable</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PzDuS</title>
-
-    <!-- Stylesheet + Bootstrap-->
     <link rel="stylesheet" href="static/css/index.css">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+    <link rel="stylesheet" href="https://www.markuptag.com/bootstrap/5/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  </head>
 
-    <script type="text/javascript" src="{{url_for('static', filename='/js/index.js')}}"></script>
+  <body>
+    <div id="loading-spinner" style="display: none"></div>
 
-</head>
-<body>
-  <div id="loading" style="display: none"></div>
-    <div class="header grid-item">
-        <h1>Pipe1</h1>
-    </div>
-    <div class="grid-container">
-        <!-- TODO Adding Grid for responsivenes-->
-        <div class="grid-item option-card" id="url-input">
-            <h3>Quelle</h3>
-            <input placeholder="URL" type="text" id="url" class="url" name="url" value="https://www.wikidata.org/wiki/Q2079">
-            <input placeholder="filename" type="text" id="file-name" class="file-name" name="file-name">
-            <button type="button" class="getRdfButton" id="js-crawler-luncher">Get RDF</button>
-        </div>
+    <div class="container">
+      <div class="p-5 text-center bg-info bg-gradient text-white">
+        <h1 class="mb-3">QEnable</h1>
+      </div>
 
-        <div class="grid-item option-card" id="mapping">
-            <h3>Mapping</h3>
-            <div>
-                <!-- TODO Buttongroup-->
-                <label>Preset</label>
-                <input type="radio" id="radio-preset" value="preset">
+      <div class="row">
+        <div class="col">
+          <div class="p-2 text-left bg-light bg-gradient">
+            <h5 class="">Quelle</h5>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="url" placeholder="URL">
             </div>
-            <div>
-                <label>Custom</label>
-                <input type="radio" id="radio-custom" value="custom">
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="file-name" placeholder="Dataset name">
             </div>
+          </div>
         </div>
 
-        <div class="grid-item option-card" id="rdf-collection">
-            <h3>RDF Collection</h3>
-            <p>
-                placeholder for ???
-                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
-                invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
-                At vero eos et accusam et justo duo dolores et ea rebum. 
-                Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor
-                sit amet. Lorem ipsum dolor sit amet, consetet
-            </p>
+        <div class="col">
+          <div class="p-2 text-left bg-light bg-gradient">
+            <h5 class="">Mapping</h5>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="preset-radio" id="preset" disabled>
+              <label class="form-check-label" for="preset-radio">Preset</label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="custom-radio" id="custom" checked disabled>
+              <label class="form-check-label" for="custom-radio">Custom</label>
+            </div>
+          </div>
         </div>
 
-        <div class="grid-item option-card" id="senke">
-            <h3>Senke</h3>
-
-            <label class="senken-label">Url</label>
-            <input type="text" id="url-3" class="url" name="url-3">
-            <br>
-            <label class="senken-label">IP-Adress</label>
-            <input type="text" id="url-3" class="url" name="url-3">
-
+        <div class="col">
+          <div class="p-2 text-left bg-light bg-gradient">
+            <h5 class="">RDF Collection</h5>
+            <p> placeholder for ??? Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempo </p>
+          </div>
         </div>
+
+        <div class="col" id="js-login-wrapper">
+          <div class="p-2 text-left bg-light bg-gradient">
+            <h5 class="">QAnswer login data</h5>
+            <div class="input-group mb-3">
+              <span class="input-group-text">Username</span>
+              <input type="text" class="form-control" aria-label="Username" name="username" id="username">
+            </div>
+            <div class="input-group mb-3">
+              <span class="input-group-text">Password</span>
+              <input type="password" class="form-control" name="password" aria-label="password" id="password">
+            </div>
+            <button type="submit" class="btn btn-md btn-block btn-dark" id="js-account-check">Login</button>
+
+            <hr class="mt-4">
+            <div class="col-12">
+              <p class="text-center mb-0">Dont have an account yet? <a href="https://qanswer-frontend.univ-st-etienne.fr/user/signup">Signup</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row p-3 col-6 mx-auto">
+        <button type="button" class="btn btn-sm btn-primary" id="js-process-launcher" disabled>Start Process!</button>
+      </div>
     </div>
-    <div class="grid-item footer">
-        <button type="button" class="startButton" id="start-process">Start Process! </button>
-    </div>
-    
-</body>
+  </body>
+  <script type="text/javascript" src="{{url_for('static', filename='js/index.js')}}"></script>
+
 </html>
