@@ -29,7 +29,7 @@ $(function() {
   };
 
   const startProcess = function() {
-    const $url = $('#url').val();
+    const $url = $('#url').val().replace(/\s/g, '');
     const $filename = $('#file-name').val();
     const data = [{'url': $url}, {'filename': $filename}];
 
