@@ -79,7 +79,7 @@ Optional, wenn man einen Container bauen möchte:
     docker start <docker container id>
     docker exec -it <docker container id> /bin/bash
 
-Dabei muss `<docker container name>` mit einem Namen für den Docker-Container ersetzt werden. 
+Dabei muss `<docker container id>` mit der ID des Docker-Containers ersetzt werden. 
 
 ## 3.3 Gitlab Action
 
