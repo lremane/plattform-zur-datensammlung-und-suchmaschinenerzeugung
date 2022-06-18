@@ -2,15 +2,17 @@ import os
 import config
 
 from QAclient.client import QAClient
-from crawler.RdfaCrawler import RdfaCrawler
 from flask import Flask, render_template, request, jsonify
+from pyRdfa import pyRdfa
+import urllib3
+urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
 app = Flask(__name__, template_folder='templates', static_folder='static')
 app.config.update(config.load_config_general().get('flask'))
 
 
 qaclient = QAClient()
-crawler = RdfaCrawler()
+crawler = pyRdfa()
 
 
 @app.route("/")
@@ -22,11 +24,11 @@ def home():
 def crawler_run():
     url = request.get_json()[0]['url']
     filename = request.get_json()[1]['filename']
-    result = crawler.get_rdfa(url)
+    result = crawler.rdf_from_source(url, outputFormat='nt')
     if result:
         if not os.path.exists("./rdfData"):
             os.mkdir("./rdfData")
-        with open(f"./rdfData/{filename}.nt", "w") as f:
+        with open(f"./rdfData/{filename}.nt", "wb") as f:
             f.write(result)
         return jsonify('ok')
     else:
@@ -37,14 +39,14 @@ def crawler_run():
 def upload_data():
     url = request.get_json()[0]['url']
     set_name = request.get_json()[1]['filename']
-    data_set = crawler.get_rdfa(url)
+    data_set = crawler.rdf_from_source(url, outputFormat='nt')
 
     response = qaclient.new_dataset(set_name, data_set)
 
     if response == 200:
         return jsonify('ok')
     else:
-        pass
+        return jsonify('Error!')
 
 
 @app.route('/check_login_data', methods=['POST'])
