@@ -106,8 +106,6 @@ Webapplikation - GUI
 
 > Als IT-Mitarbeiter eines Unternehmens kann ich RDF-Daten aus beliebigen Websiten crawlen und diese an eine konkrete QAnswer instanz hochladen, damit ich auf diesen Daten natürlichsprachliche Fragen auf QAnswer stellen kann. (Die RDF-Daten der gecrawlten Website müssen das Alphabet von Schema.org verwenden, damit Fragen gestellt werden können)
 
-> Als IT-Mitarbeiter eines Unternehmens kann ich RDF-Daten aus einer beliebigen Website crawlen und im N-Triples Format herunterladen.
-
 ## 5. Beiträge der Teammitglieder
 
 Alle haben sich gleichermaßen an den Projektmeetings beteiligt.
