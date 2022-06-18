@@ -29,7 +29,7 @@ def crawler_run():
         if not os.path.exists("./rdfData"):
             os.mkdir("./rdfData")
         with open(f"./rdfData/{filename}.nt", "wb") as f:
-            f.write(result)
+            f.write(result.encode('utf-8'))
         return jsonify('ok')
     else:
         return jsonify('Error!')
