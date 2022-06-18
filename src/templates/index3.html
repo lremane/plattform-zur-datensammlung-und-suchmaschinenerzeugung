@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <title>Bootstrap Example</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="{{url_for('static', filename='js/index2.js')}}"></script>
+    <link rel="stylesheet" href="/static/css/index2.css">
+    </head>
+    <body>
+      <div id="loading" style="display: none"></div>
+      
+        <header class="bgimage">
+            <div class="container">
+                <h1>Data Crawling</h1>
+            </div>
+        </header>
+        
+
+            <div class="row">
+                <div class="col-xs-offset-3 col-xs-6 col-sm-offset-0 col-lg-12 col-md-12 col-sm-6">
+                    <div class="container">
+                        <h1 class="form-signin-heading"> Url und dataset Name eingeben</h1>
+                        <input  type="text" id="url" class="form-control" placeholder="url" required autofocus>
+                        <input  type="text" id="filename" class="form-control" placeholder="Dataset Name" required >       
+                        <button class="btn btn-lg btn-primary btn-block"  id="js-crawler-luncher">data crawling</button>
+                    </div>
+                </div>
+            </div>
+
+
+        </header>
+    
+    </body>
+</html> 
