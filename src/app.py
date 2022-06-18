@@ -18,6 +18,11 @@ def home():
     return render_template('index.html')
 
 
+@app.route("/version")
+def version():
+    return render_template('index2.html')
+
+
 @app.route('/crawler-run', methods=['POST'])
 def crawler_run():
     url = request.get_json()[0]['url']
@@ -56,6 +61,17 @@ def check_login_data():
         return jsonify({'res': '1'})
     else:
         return jsonify({'res': '0'})
+
+
+@app.route('/crawl-your-data', methods=['POST'])
+def check_login_data_2():
+
+    qaclient.login(request.form.get('username'), request.form.get('password'))
+
+    if qaclient.token:
+        return render_template('index3.html')
+    else:
+        return render_template('error.html')
 
 
 if __name__ == '__main__':
