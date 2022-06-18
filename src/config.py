@@ -23,7 +23,7 @@ def load_config_general() -> dict:
 
 
 def create_config(path: str, name: str, config: dict) -> None:
-    os.makedirs(path, exist_ok=True)
+    os.makedirs(path, exist_ok=True, mode=0o777)
     with open(f"{path}/{name}.yml", 'w') as file:
         file.write(yaml.dump(config, sort_keys=False))
 
