@@ -7,51 +7,51 @@ $(function() {
    * @param {String} type type of the method.
    */
   function serverCall(data, method, type) {
-    const $loading = $('#loading-spinner');
+    var $loading = $('#loading-spinner');
 
     if ($loading.css('display') === 'none') $loading.css('display', 'block');
 
     $.ajax({
-      type: 'POST',
-      url: method,
-      data: JSON.stringify(data),
+      type:        'POST',
+      url:         method,
+      data:        JSON.stringify(data),
       contentType: 'application/json',
-      dataType: 'json',
-      success: function() {
+      dataType:    'json',
+      success:     function() {
         $loading.css('display', 'none');
         alert('Success Data ' + type);
       },
       error: function() {
         $loading.css('display', 'none');
         alert('something is wrong while ' + type);
-      },
+      }
     });
-  };
+  }
 
-  const startProcess = function() {
-    const $url = $('#url').val().replace(/\s/g, '');
-    const $filename = $('#file-name').val();
-    const data = [{'url': $url}, {'filename': $filename}];
+  var startProcess = function() {
+    var $url      = $('#url').val().replace(/\s/g, ''),
+        $filename = $('#file-name').val(),
+        data      = [{ url: $url }, { filename: $filename }];
 
     serverCall(data, 'crawler-run', 'Crawling');
     serverCall(data, 'upload-data', 'Uploading');
   };
 
-  const accountCheck = function() {
-    const $username = $('#username').val();
-    const $password = $('#password').val();
-    const $processLauncher = $('#js-process-launcher');
-    const $loginWrapper = $('#js-login-wrapper');
-    const data = [{'username': $username}, {'password': $password}];
+  var accountCheck = function() {
+    var $username        = $('#username').val(),
+        $password        = $('#password').val(),
+        $processLauncher = $('#js-process-launcher'),
+        $loginWrapper    = $('#js-login-wrapper'),
+        data             = [{ username: $username }, { password: $password }];
 
     $.ajax({
-      type: 'POST',
-      url: '/check_login_data',
-      data: JSON.stringify(data),
+      type:        'POST',
+      url:         '/check_login_data',
+      data:        JSON.stringify(data),
       contentType: 'application/json',
-      dataType: 'json',
-      success: function(e) {
-        const res = e.res;
+      dataType:    'json',
+      success:     function(e) {
+        var res = e.res;
         if (res === '1') {
           $processLauncher.prop('disabled', false);
           $loginWrapper.css('display', 'none');
@@ -60,7 +60,7 @@ $(function() {
       },
       error: function() {
         alert('something is wrong, like really wrong');
-      },
+      }
     });
   };
 
