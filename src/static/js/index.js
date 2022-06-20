@@ -1,11 +1,17 @@
 $(function() {
-  /**
-    Instead of calling the server with multiple ajax calls,
-    this method takes care of it
-   * @param {hash}   data sent data.
-   * @param {String} method method name on the server.
-   * @param {String} type type of the method.
-   */
+  function growler(msg, type) {
+    $.bootstrapGrowl(msg, {
+      ele:             'body',
+      type:            type, // (null, 'info', 'error', 'success')
+      offset:          { from: 'top', amount: 20 },
+      align:           'right',
+      width:           250,
+      delay:           2000,
+      allow_dismiss:   true,
+      stackup_spacing: 10
+    });
+  }
+
   function serverCall(data, method, type) {
     var $loading = $('#loading-spinner');
 
@@ -19,11 +25,11 @@ $(function() {
       dataType:    'json',
       success:     function() {
         $loading.css('display', 'none');
-        alert('Success Data ' + type);
+        growler('Success Data ' + type, 'success');
       },
       error: function() {
         $loading.css('display', 'none');
-        alert('something is wrong while ' + type);
+        growler('something is wrong while ' + type, 'info');
       }
     });
   }
@@ -51,12 +57,15 @@ $(function() {
       contentType: 'application/json',
       dataType:    'json',
       success:     function(e) {
-        var res = e.res;
+        var res = e.res,
+            msg = res === '0' ? 'Username, email or password is wrong' : 'Welcome!';
         if (res === '1') {
           $processLauncher.prop('disabled', false);
-          $loginWrapper.css('display', 'none');
+          $loginWrapper.animate({ height: '0px' }, 400, function() {
+            $(this).remove();
+          });
         }
-        alert(res === '0' ? 'Error' : 'Success');
+        growler(msg, 'success');
       },
       error: function() {
         alert('something is wrong, like really wrong');
