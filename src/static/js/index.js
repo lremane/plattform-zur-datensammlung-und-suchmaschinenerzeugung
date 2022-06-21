@@ -1,15 +1,19 @@
 $(function() {
   function growler(msg, type) {
-    $.bootstrapGrowl(msg, {
+    $.growler(msg, {
       ele:             'body',
-      type:            type, // (null, 'info', 'error', 'success')
+      type:            type,
       offset:          { from: 'top', amount: 20 },
       align:           'right',
       width:           250,
       delay:           2000,
       allow_dismiss:   true,
-      stackup_spacing: 10
+      stackup_spacing: 1
     });
+
+    setTimeout(function() {
+      $('.growler').remove();
+    }, 4000);
   }
 
   function serverCall(data, method, type) {
@@ -29,7 +33,7 @@ $(function() {
       },
       error: function() {
         $loading.css('display', 'none');
-        growler('something is wrong while ' + type, 'info');
+        growler('something is wrong while ' + type, 'error');
       }
     });
   }
@@ -65,7 +69,7 @@ $(function() {
             $(this).remove();
           });
         }
-        growler(msg, 'success');
+        growler(msg, res === '0' ? 'error' : 'success');
       },
       error: function() {
         alert('something is wrong, like really wrong');
