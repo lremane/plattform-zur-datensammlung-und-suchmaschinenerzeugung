@@ -77,6 +77,10 @@ $(function() {
     });
   };
 
+  $('#js-login-submit').on('submit', function() {
+    return false;
+  });
+
   $('#js-process-launcher').on('click', startProcess);
   $('#js-account-check').on('click', accountCheck);
 });
