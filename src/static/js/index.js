@@ -4,10 +4,8 @@ $(function() {
       ele:             'body',
       type:            type,
       offset:          { from: 'top', amount: 20 },
-      align:           'right',
       width:           250,
       delay:           2000,
-      allow_dismiss:   true,
       stackup_spacing: 1
     });
 
@@ -17,7 +15,7 @@ $(function() {
   }
 
   function serverCall(data, method, type) {
-    var $loading = $('#loading-spinner');
+    var $loading = $('#js-loading-spinner');
 
     if ($loading.css('display') === 'none') $loading.css('display', 'block');
 

@@ -6,12 +6,13 @@
         css,
         offsetAmount;
 
-    options = $.extend({}, $.growler.default_options, options);
+    options = $.extend({}, options);
     $alert = $('<div>');
     $alert.attr('class', 'growler alert');
 
     if (options.type) $alert.addClass('alert-' + options.type);
     if (options.allow_dismiss)  $alert.addClass('alert-dismissible');
+
     $alert.append(message);
 
     if (options.top_offset) {
@@ -32,7 +33,8 @@
       position:  (options.ele === 'body' ? 'fixed' : 'absolute'),
       margin:    0,
       'z-index': '9999',
-      display:   'none'
+      display:   'none',
+      right:     '20px'
     };
 
     css[options.offset.from] = offsetAmount + 'px';
@@ -42,22 +44,6 @@
     if (options.width !== 'auto') $alert.css('width', options.width + 'px');
 
     $(options.ele).append($alert);
-
-    switch (options.align) {
-    case 'center':
-      $alert.css({
-        left:          '50%',
-        'margin-left': '-' + ($alert.outerWidth() / 2) + 'px'
-      });
-      break;
-
-    case 'left':
-      $alert.css('left', '20px');
-      break;
-
-    default:
-      $alert.css('right', '20px');
-    }
 
     switch (options.type) {
     case 'error':
