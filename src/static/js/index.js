@@ -43,6 +43,8 @@ $(function() {
 
     serverCall(data, 'crawler-run', 'Crawling');
     serverCall(data, 'upload-data', 'Uploading');
+    $('#js-data-downloader').prop('disabled', false);
+    $('#js-data-downloader').removeClass('disabled');
   };
 
   var accountCheck = function() {
@@ -75,10 +77,21 @@ $(function() {
     });
   };
 
+  function dataDownloader() {
+    var $filename = $('#file-name').val().replace(/\s/g, '');
+
+    if ($filename === '') {
+      growler('your forgot to name your file', 'error');
+    } else {
+      $('a[href]').attr('href', '/data_downloader/' + $filename);
+    }
+  }
+
   $('#js-login-submit').on('submit', function() {
     return false;
   });
 
   $('#js-process-launcher').on('click', startProcess);
   $('#js-account-check').on('click', accountCheck);
+  $('#js-data-downloader').on('click', dataDownloader);
 });

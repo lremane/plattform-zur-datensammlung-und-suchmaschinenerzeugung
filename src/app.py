@@ -2,7 +2,7 @@ import os
 import config
 
 from QAclient.client import QAClient
-from flask import Flask, render_template, request, jsonify
+from flask import Flask, render_template, request, jsonify, send_file
 from pyRdfa import pyRdfa
 import urllib3
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
@@ -74,6 +74,11 @@ def check_login_data_2():
         return render_template('index3.html')
     else:
         return render_template('error.html')
+
+
+@app.route('/data_downloader/<filename>', methods=['POST', 'GET'])
+def data_downloader(filename):
+    return send_file('rdfData/' + filename + '.nt', as_attachment=True)
 
 
 if __name__ == '__main__':
