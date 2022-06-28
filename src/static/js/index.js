@@ -41,8 +41,7 @@ $(function() {
         $filename = $('#file-name').val(),
         data      = [{ url: $url }, { filename: $filename }];
 
-    serverCall(data, 'crawler-run', 'Crawling');
-    serverCall(data, 'upload-data', 'Uploading');
+    serverCall(data, 'process_run', 'Crawling and Uploading');
     $('#js-data-downloader').prop('disabled', false);
     $('#js-data-downloader').removeClass('disabled');
   };
