@@ -144,16 +144,16 @@ Was muss der nutzer können?
 - Crawl und Mapping Parameter anpassen
 - RDF-Daten anzeigen und analysieren
 
-![image](https://www.imn.htwk-leipzig.de/~jkindler/PDuS/img-1.png)
+![image](assets/sprint1/img-1.png)
 
 Webapplikation - GUI
 
-![image](https://www.imn.htwk-leipzig.de/~jkindler/PDuS/img-2.png)
+![image](assets/sprint1/img-2.png)
 
 
 Plug-In (optional)
 
-![image](https://www.imn.htwk-leipzig.de/~jkindler/PDuS/img-3.png)
+![image](assets/sprint1/img-3.png)
 
 TODO : Download für extrahierte RDF´s einbinden
 

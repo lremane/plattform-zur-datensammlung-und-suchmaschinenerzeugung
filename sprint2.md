@@ -99,7 +99,7 @@ Darauf folgend ist eine Suchanfrage auf den Daten über QAnswer möglich und die
 
 Webapplikation - GUI
 
-![image](https://www.imn.htwk-leipzig.de/~jkindler/PDuS/img-2.png)
+![image](assets/sprint1/img-2.png)
 
 
 ## 4.3 Erfüllte funktionale und nicht funktionale Anforderungen
