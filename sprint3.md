@@ -1,6 +1,17 @@
 1. Name des Projektes
 
 2. Nennen Sie alle aktiven Teammitglieder
+   - [Johannes Kindler](https://gitlab-softwareprojekt.fim.htwk-leipzig.de/users/jkindler/activity)
+   - [Philipp Semlinger](https://gitlab-softwareprojekt.fim.htwk-leipzig.de/users/users/psemling/activity)
+   - [Finn Mergenthal](https://gitlab-softwareprojekt.fim.htwk-leipzig.de/users/users/fmergent/activity)
+   - [David Deutschmann](https://gitlab-softwareprojekt.fim.htwk-leipzig.de/users/users/ddeutsch/activity)
+   - [Laurin Remane](https://gitlab-softwareprojekt.fim.htwk-leipzig.de/users/users/mremane/activity)
+   - [Abdul Rahman Alkedda](https://gitlab-softwareprojekt.fim.htwk-leipzig.de/users/aalkedda/activity)
+   - [Abdullah Al-hoty](https://gitlab-softwareprojekt.fim.htwk-leipzig.de/users/aalhoty/activity)
+   - [Moritz Meister](https://gitlab-softwareprojekt.fim.htwk-leipzig.de/users/mmeister/activity)
+   - [Lukas Ponicke](https://gitlab-softwareprojekt.fim.htwk-leipzig.de/users/lponicke/activity)
+   - [Tony Lenz](https://gitlab-softwareprojekt.fim.htwk-leipzig.de/users/tlenz1/activity)
+   - [Lukas Marche](https://gitlab-softwareprojekt.fim.htwk-leipzig.de/users/lmarche/activity)
 
 3. 
    1. Geben Sie den Link zu Ihrem Piloten an und beschreiben Sie detailliert, wie dieser genutzt werden kann (also, ggf. Login oder andere Aktivitäten).
