@@ -3,4 +3,4 @@ api-client
 PyYAML
 pyRdfa3
 requests
-openapi-generator-cli
+./qaclient/
