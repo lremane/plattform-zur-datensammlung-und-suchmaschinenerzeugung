@@ -36,20 +36,20 @@ def process_run():
     if result:
         if not os.path.exists("./rdfData"):
             os.mkdir("./rdfData")
-        with open(f"./rdfData/{dataset}.nt", "wb") as f:
-            f.write(result.encode('utf-8'))
+        with open(f"./rdfData/{dataset}.nt", "wb") as file:
+            file.write(result.encode('utf-8'))
 
     with ApiClient(client_config) as api_client:
         api_instance = DatasetControllerKgApi(api_client)
-        file = f'rdfData/{dataset}.nt'
-        index_config = IndexConfig(dataset=dataset)
+        with open(f'rdfData/{dataset}.nt', 'rb') as file:
+            index_config = IndexConfig(dataset=dataset)
 
-        try:
-            api_instance.upload_using_post(dataset, file)
-            api_instance.index_using_post(index_config)
-            return jsonify('ok')
-        except ApiException:
-            return jsonify('Error while processing')
+            try:
+                api_instance.upload_using_post(dataset, file)
+                api_instance.index_using_post(index_config)
+                return jsonify('ok')
+            except ApiException:
+                return jsonify('Error while processing')
 
 
 def upload_dataset():
