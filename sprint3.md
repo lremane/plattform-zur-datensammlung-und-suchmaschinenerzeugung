@@ -2,7 +2,7 @@
 
 2. Nennen Sie alle aktiven Teammitglieder
    - [Abdullah Al-hoty](https://gitlab-softwareprojekt.fim.htwk-leipzig.de/users/aalhoty/activity)
-   - [Abdul Rahman Alkedda](https://gitlab-softwareprojekt.fim.htwk-leipzig.de/users/aalkedda/activity)
+   - [Abdul Rahman Alkedda](https://gitlab-softwareprojekt.fim.htwk-leipzig.de/users/aalkedda/activity) [<i style="font-size:15px;background:-webkit-linear-gradient(#ff6347, #6600ff);-webkit-background-clip: text; -webkit-text-fill-color: transparent;">Backend</i>,<i style="font-size:15px;background:-webkit-linear-gradient(#33cccc, #6600ff);-webkit-background-clip: text; -webkit-text-fill-color: transparent;"> Frontend</i>,<i style="font-size: 15px;background:-webkit-linear-gradient(#eee, #6600ff);-webkit-background-clip: text; -webkit-text-fill-color:transparent;"> Docker</i>]
    - [David Deutschmann](https://gitlab-softwareprojekt.fim.htwk-leipzig.de/users/users/ddeutsch/activity)
    - [Johannes Kindler](https://gitlab-softwareprojekt.fim.htwk-leipzig.de/users/jkindler/activity)
    - [Tony Lenz](https://gitlab-softwareprojekt.fim.htwk-leipzig.de/users/tlenz1/activity)
