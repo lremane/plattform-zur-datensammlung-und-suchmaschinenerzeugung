@@ -2,7 +2,10 @@ import os
 import config
 import urllib3
 from pyRdfa import pyRdfa
-from qaclient import ApiException, Configuration, ApiClient, UserControllerApi, LoginRequest, DatasetControllerKgApi, IndexConfig
+from qaclient.models import IndexConfig, LoginRequest
+from qaclient import ApiException, Configuration, ApiClient
+from qaclient.apis import UserControllerApi, DatasetControllerKgApi
+
 from flask import Flask, render_template, request, jsonify, send_file
 
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
