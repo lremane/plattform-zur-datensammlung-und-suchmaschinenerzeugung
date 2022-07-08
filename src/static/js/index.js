@@ -14,6 +14,11 @@ $(function() {
     }, 4000);
   }
 
+  function clearFeld(feld, feld_2){
+    $(feld).val('');
+    $(feld_2).val('');
+  }
+
   function serverCall(data, method, type) {
     var $loading = $('#js-loading-spinner');
 
@@ -34,6 +39,7 @@ $(function() {
         growler('something is wrong while ' + type, 'error');
       }
     });
+    clearFeld('#url', '#file-name');
   }
 
   var startProcess = function() {
@@ -74,6 +80,7 @@ $(function() {
         alert('something is wrong, like really wrong');
       }
     });
+    clearFeld('#username', '#password');
   };
 
   function dataDownloader() {
