@@ -36,17 +36,15 @@ def process_run():
     if result:
         if not os.path.exists("./rdfData"):
             os.mkdir("./rdfData")
-        with open(f"./rdfData/{dataset}.nt", "wb") as file:
-            file.write(result.encode('utf-8'))
+        with open(f"./rdfData/{dataset}.nt", "w") as file:
+            file.write(result)
 
     with ApiClient(client_config) as api_client:
         api_instance = DatasetControllerKgApi(api_client)
         with open(f'rdfData/{dataset}.nt', 'rb') as file:
-            index_config = IndexConfig(dataset=dataset)
-
             try:
                 api_instance.upload_using_post(dataset, file)
-                api_instance.index_using_post(index_config)
+                api_instance.index_using_post(IndexConfig(dataset=dataset))
                 return jsonify('ok')
             except ApiException:
                 return jsonify('Error while processing')
@@ -59,12 +57,11 @@ def upload_dataset():
 @app.route('/check_login_data', methods=['POST'])
 def check_login_data():
     with ApiClient(client_config) as api_client:
-        api_instance = UserControllerApi(api_client)
         login_request = LoginRequest(username_or_email=request.get_json()[0]['username'],
                                      password=request.get_json()[1]['password'])
 
         try:
-            auth = api_instance.signin_using_post(login_request)
+            auth = UserControllerApi(api_client).signin_using_post(login_request)
             client_config.api_key = {'JWT': auth.access_token}
 
             return jsonify({'res': '1'})
@@ -75,12 +72,11 @@ def check_login_data():
 @app.route('/crawl-your-data', methods=['POST'])
 def check_login_data_2():
     with ApiClient(client_config) as api_client:
-        api_instance = UserControllerApi(api_client)
         login_request = LoginRequest(username_or_email=request.form.get('username'),
                                      password=request.form.get('password'))
 
         try:
-            auth = api_instance.signin_using_post(login_request)
+            auth = UserControllerApi(api_client).signin_using_post(login_request)
             client_config.api_key = {'JWT': auth.access_token}
 
             return render_template('index3.html')
