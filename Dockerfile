@@ -17,9 +17,8 @@ WORKDIR /home/qauser
 ENV PATH="/home/qauser/.local/bin:${PATH}"
 
 # Installs all python requirements, including the qaclient package built by the client-builder stage
-COPY requirements.txt .
-COPY --chown=qauser:qauser requirements.txt requirements.txt
-COPY --from=client-builder  --chown=qauser:qauser /local/qaclient ./qaclient/
+COPY --chown=qauser:qauser requirements.txt .
+COPY --from=client-builder --chown=qauser:qauser /local/qaclient ./qaclient/
 RUN pip install --user -r requirements.txt
 
 # Copy source files and start flask server
