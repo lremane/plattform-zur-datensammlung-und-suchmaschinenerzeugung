@@ -14,7 +14,7 @@ app = Flask(__name__, template_folder='templates', static_folder='static')
 app.config.update(config.load_config_general().get('flask'))
 
 crawler = pyRdfa()
-client_config = Configuration(api_key_prefix={'Authorization': 'Bearer'})
+client_config = Configuration(api_key_prefix={'JWT': 'Bearer'})
 
 
 @app.route("/")
@@ -65,7 +65,7 @@ def check_login_data():
 
         try:
             auth = api_instance.signin_using_post(login_request)
-            client_config.api_key = {'Authorization': auth.access_token}
+            client_config.api_key = {'JWT': auth.access_token}
 
             return jsonify({'res': '1'})
         except ApiException:
@@ -81,7 +81,7 @@ def check_login_data_2():
 
         try:
             auth = api_instance.signin_using_post(login_request)
-            client_config.api_key = {'Authorization': auth.access_token}
+            client_config.api_key = {'JWT': auth.access_token}
 
             return render_template('index3.html')
         except ApiException:
