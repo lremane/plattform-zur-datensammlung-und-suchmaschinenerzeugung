@@ -55,7 +55,7 @@ def process_run():
 
 @app.route('/check_login_data', methods=['POST'])
 def check_login_data():
-    # Checks validates user credentials and stores authentication token in config
+    # Validates user credentials and stores authentication token in config
     with ApiClient(client_config) as api_client:
         login_request = LoginRequest(username_or_email=request.get_json()[0]['username'],
                                      password=request.get_json()[1]['password'])
@@ -70,7 +70,7 @@ def check_login_data():
 
 @app.route('/crawl-your-data', methods=['POST'])
 def check_login_data_2():
-    # Checks validates user credentials and stores authentication token in config
+    # Validates user credentials and stores authentication token in config
     with ApiClient(client_config) as api_client:
         login_request = LoginRequest(username_or_email=request.form.get('username'),
                                      password=request.form.get('password'))
