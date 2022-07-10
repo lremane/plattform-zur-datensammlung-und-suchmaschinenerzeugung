@@ -13,7 +13,6 @@ app.config.update(config.load_config_general().get('flask'))
 
 
 qaclient = QAClient()
-crawler = pyRdfa()
 
 
 @app.route("/")
@@ -30,7 +29,7 @@ def version():
 def process_run():
     url = request.get_json()[0]['url']
     filename = request.get_json()[1]['filename']
-    result = crawler.rdf_from_source(url, outputFormat='nt')
+    result = pyRdfa().rdf_from_source(url, outputFormat='nt')
     response = qaclient.new_dataset(filename, result)
 
     if result:
