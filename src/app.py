@@ -33,12 +33,14 @@ def process_run():
     dataset = request.get_json()[1]['filename']
     result = crawler.rdf_from_source(url, outputFormat='nt')
 
+    # Stores crawled file in rdfData/
     if result:
         if not os.path.exists("./rdfData"):
             os.mkdir("./rdfData")
         with open(f"./rdfData/{dataset}.nt", "w") as file:
             file.write(result)
 
+    # Uploads crawled .nt file to QAnswer and indexes the dataset
     with ApiClient(client_config) as api_client:
         api_instance = DatasetControllerKgApi(api_client)
         with open(f'rdfData/{dataset}.nt', 'rb') as file:
@@ -50,12 +52,10 @@ def process_run():
                 return jsonify('Error while processing')
 
 
-def upload_dataset():
-    pass
-
 
 @app.route('/check_login_data', methods=['POST'])
 def check_login_data():
+    # Checks validates user credentials and stores authentication token in config
     with ApiClient(client_config) as api_client:
         login_request = LoginRequest(username_or_email=request.get_json()[0]['username'],
                                      password=request.get_json()[1]['password'])
@@ -63,7 +63,6 @@ def check_login_data():
         try:
             auth = UserControllerApi(api_client).signin_using_post(login_request)
             client_config.api_key = {'JWT': auth.access_token}
-
             return jsonify({'res': '1'})
         except ApiException:
             return jsonify({'res': '0'})
@@ -71,6 +70,7 @@ def check_login_data():
 
 @app.route('/crawl-your-data', methods=['POST'])
 def check_login_data_2():
+    # Checks validates user credentials and stores authentication token in config
     with ApiClient(client_config) as api_client:
         login_request = LoginRequest(username_or_email=request.form.get('username'),
                                      password=request.form.get('password'))
