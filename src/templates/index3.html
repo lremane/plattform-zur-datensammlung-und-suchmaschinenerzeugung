@@ -8,11 +8,11 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="{{url_for('static', filename='js/index2.js')}}"></script>
-    <link rel="stylesheet" href="/static/css/index2.css">
+    <script type="text/javascript" src="{{url_for('static', filename='js/index.js')}}"></script>
+    <link rel="stylesheet" href="/static/css/index.css">
     </head>
     <body>
-      <div id="loading" style="display: none"></div>
+        <div id="js-loading-spinner" class="loading-spinner" style="display: none"></div>
       
         <header class="bgimage">
             <div class="container">
@@ -26,8 +26,8 @@
                     <div class="container">
                         <h1 class="form-signin-heading"> Url und dataset Name eingeben</h1>
                         <input  type="text" id="url" class="form-control" placeholder="url" required autofocus>
-                        <input  type="text" id="filename" class="form-control" placeholder="Dataset Name" required >       
-                        <button class="btn btn-lg btn-primary btn-block"  id="js-crawler-luncher">data crawling</button>
+                        <input  type="text" id="file-name" class="form-control" placeholder="Dataset Name" required >       
+                        <button type="button" class="btn btn-sm btn-primary "  id="js-process-launcher">data crawling</button>
                     </div>
                 </div>
             </div>
