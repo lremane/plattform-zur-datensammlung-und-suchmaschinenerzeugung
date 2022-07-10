@@ -3,3 +3,4 @@ api-client
 PyYAML
 pyRdfa3
 requests
+python-dotenv

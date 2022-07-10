@@ -3,6 +3,7 @@
 # you start the docker image it wont run and you will get a wonderful error => PermissionError: [Errno 13] Permission denied
 # that's why I used dockerignore.
 
+src/venv
 src/conf
 src/rdfData
 src/__pycache__
