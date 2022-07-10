@@ -1,5 +1,5 @@
 function fensterOeffnen() { 
-  window.open('https://qanswer-frontend.univ-st-etienne.fr/user/signup%27');
+  window.open('https://qanswer-frontend.univ-st-etienne.fr/user/signup');
 }
 
 $(function() {
