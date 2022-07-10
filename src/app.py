@@ -30,23 +30,23 @@ def version():
 @app.route('/process_run', methods=['POST'])
 def process_run():
     url = request.get_json()[0]['url']
-    dataset = request.get_json()[1]['filename']
+    filename = request.get_json()[1]['filename']
     result = crawler.rdf_from_source(url, outputFormat='nt')
 
     # Stores crawled file in rdfData/
     if result:
         if not os.path.exists("./rdfData"):
             os.mkdir("./rdfData")
-        with open(f"./rdfData/{dataset}.nt", "w") as file:
+        with open(f"./rdfData/{filename}.nt", "w") as file:
             file.write(result)
 
-    # Uploads crawled .nt file to QAnswer and indexes the dataset
+    # Uploads crawled .nt file to QAnswer and indexes the filename
     with ApiClient(client_config) as api_client:
         api_instance = DatasetControllerKgApi(api_client)
-        with open(f'rdfData/{dataset}.nt', 'rb') as file:
+        with open(f'rdfData/{filename}.nt', 'rb') as file:
             try:
-                api_instance.upload_using_post(dataset, file)
-                api_instance.index_using_post(IndexConfig(dataset=dataset))
+                api_instance.upload_using_post(filename, file)
+                api_instance.index_using_post(IndexConfig(dataset=filename))
                 return jsonify('ok')
             except ApiException:
                 return jsonify('Error while processing')
