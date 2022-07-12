@@ -4,3 +4,5 @@ PyYAML
 pyRdfa3
 requests
 python-dotenv
+
+./qaclient/
