@@ -13,7 +13,6 @@ urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 app = Flask(__name__, template_folder='templates', static_folder='static')
 app.config.update(config.load_config_general().get('flask'))
 
-crawler = pyRdfa()
 client_config = Configuration(api_key_prefix={'JWT': 'Bearer'})
 
 
@@ -31,7 +30,7 @@ def version():
 def process_run():
     url = request.get_json()[0]['url']
     filename = request.get_json()[1]['filename']
-    result = crawler.rdf_from_source(url, outputFormat='nt')
+    result = pyRdfa().rdf_from_source(url, outputFormat='nt')
 
     # Stores crawled file in rdfData/
     if result:
