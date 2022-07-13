@@ -10,7 +10,7 @@
    - [Moritz Meister](https://gitlab-softwareprojekt.fim.htwk-leipzig.de/users/mmeister/activity)
    - [Finn Mergenthal](https://gitlab-softwareprojekt.fim.htwk-leipzig.de/users/users/fmergent/activity) [Restrukturierung des Clients, Code reviews]
    - [Lukas Ponicke](https://gitlab-softwareprojekt.fim.htwk-leipzig.de/users/lponicke/activity)
-   - [Laurin Remane](https://gitlab-softwareprojekt.fim.htwk-leipzig.de/users/users/mremane/activity)
+   - [Laurin Remane](https://gitlab-softwareprojekt.fim.htwk-leipzig.de/users/users/mremane/activity) [Austausch Client]
    - [Philipp Semlinger](https://gitlab-softwareprojekt.fim.htwk-leipzig.de/users/users/psemling/activity) [Scrum master, organization, communication product owner]
 
 3. 
