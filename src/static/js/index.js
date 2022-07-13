@@ -1,7 +1,3 @@
-function fensterOeffnen() { 
-  window.open('https://qanswer-frontend.univ-st-etienne.fr/user/signup');
-}
-
 $(function() {
   function growler(msg, type) {
     $.growler(msg, {
@@ -17,8 +13,6 @@ $(function() {
       $('.growler').remove();
     }, 4000);
   }
-
-
 
   function serverCall(data, method, type) {
     var $loading = $('#js-loading-spinner');
@@ -40,7 +34,6 @@ $(function() {
         growler('something is wrong while ' + type, 'error');
       }
     });
-
   }
 
   var startProcess = function() {
@@ -81,7 +74,6 @@ $(function() {
         alert('something is wrong, like really wrong');
       }
     });
-   
   };
 
   function dataDownloader() {
