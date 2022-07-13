@@ -11,7 +11,7 @@
    - [Finn Mergenthal](https://gitlab-softwareprojekt.fim.htwk-leipzig.de/users/users/fmergent/activity)
    - [Lukas Ponicke](https://gitlab-softwareprojekt.fim.htwk-leipzig.de/users/lponicke/activity)
    - [Laurin Remane](https://gitlab-softwareprojekt.fim.htwk-leipzig.de/users/users/mremane/activity)
-   - [Philipp Semlinger](https://gitlab-softwareprojekt.fim.htwk-leipzig.de/users/users/psemling/activity) [Scrum-Master, Organization, Kommunikation Product Owner]
+   - [Philipp Semlinger](https://gitlab-softwareprojekt.fim.htwk-leipzig.de/users/users/psemling/activity) [Scrum master, organization, communication product owner]
 
 3. 
    1. Geben Sie den Link zu Ihrem Piloten an und beschreiben Sie detailliert, wie dieser genutzt werden kann (also, ggf. Login oder andere Aktivitäten).
