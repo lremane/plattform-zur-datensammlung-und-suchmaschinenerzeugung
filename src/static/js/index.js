@@ -1,4 +1,5 @@
 $(function() {
+  var oldDataset;
   function growler(msg, type) {
     $.growler(msg, {
       ele:             'body',
@@ -12,11 +13,6 @@ $(function() {
     setTimeout(function() {
       $('.growler').remove();
     }, 4000);
-  }
-
-  function clearFeld(feld, feld_2){
-    $(feld).val('');
-    $(feld_2).val('');
   }
 
   function serverCall(data, method, type) {
@@ -39,17 +35,22 @@ $(function() {
         growler('something is wrong while ' + type, 'error');
       }
     });
-    clearFeld('#url', '#file-name');
   }
 
   var startProcess = function() {
-    var $url      = $('#url').val().replace(/\s/g, ''),
-        $filename = $('#file-name').val(),
-        data      = [{ url: $url }, { filename: $filename }];
+    var $url        = $('#url'),
+        $filename   = $('#file-name'),
+        filenameVal = $filename.val(),
+        data        = [{ url: $url.val().replace(/\s/g, '') }, { filename: filenameVal }];
+
+    if (filenameVal !== null && filenameVal !== '') oldDataset = filenameVal;
 
     serverCall(data, 'process_run', 'Crawling and Uploading');
     $('#js-data-downloader').prop('disabled', false);
     $('#js-data-downloader').removeClass('disabled');
+
+    $url.val('');
+    $filename.val('');
   };
 
   var accountCheck = function() {
@@ -80,16 +81,13 @@ $(function() {
         alert('something is wrong, like really wrong');
       }
     });
-    clearFeld('#username', '#password');
   };
 
   function dataDownloader() {
-    var $filename = $('#file-name').val().replace(/\s/g, '');
-
-    if ($filename === '') {
+    if (oldDataset === '' || oldDataset === null) {
       growler('your forgot to name your file', 'error');
     } else {
-      $('a[href]').attr('href', '/data_downloader/' + $filename);
+      $('a[href]').attr('href', '/data_downloader/' + oldDataset);
     }
   }
 
