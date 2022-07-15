@@ -42,7 +42,7 @@ def version() -> str:
 def process_run() -> Response:
     """
     Crawls, uploads and indexes a dataset according to user settings.
-    :return: Json-Response, wether process was successful ('ok') or unsuccessful ('Error while processing').
+    :return: Json-Response, whether process was successful ('ok') or unsuccessful ('Error while processing').
     """
     url = request.get_json()[0]['url']
     filename = request.get_json()[1]['filename']
@@ -71,7 +71,7 @@ def process_run() -> Response:
 def check_login_data() -> Response:
     """
     Validates login data for QAnswer against QAnswer frontend.
-    :return: Json-Response, wether login was successful (1) or unsuccessful (0)
+    :return: Json-Response, whether login was successful (1) or unsuccessful (0)
     """
     # Validates user credentials and stores authentication token in config
     with ApiClient(client_config) as api_client:
