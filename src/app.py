@@ -1,5 +1,5 @@
 import os
-import config
+from config import load_config_general
 import urllib3
 from pyRdfa import pyRdfa
 from qaclient.models import IndexConfig, LoginRequest
@@ -11,7 +11,7 @@ from flask import Flask, render_template, request, jsonify, send_file, Response
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
 app = Flask(__name__, template_folder='templates', static_folder='static')
-app.config.update(config.load_config_general().get('flask'))
+app.config.update(load_config_general().get('flask'))
 
 client_config = Configuration(api_key_prefix={'JWT': 'Bearer'})
 
