@@ -1,33 +1,49 @@
+"""
+Flask App Module
+Hosts all methods to be accessed by Webclients and serves the frontend.
+"""
 import os
-import config
+from config import load_config_general
 import urllib3
 from pyRdfa import pyRdfa
 from qaclient.models import IndexConfig, LoginRequest
 from qaclient import ApiException, Configuration, ApiClient
 from qaclient.apis import UserControllerApi, DatasetControllerKgApi
 
-from flask import Flask, render_template, request, jsonify, send_file
+from flask import Flask, render_template, request, jsonify, send_file, Response
 
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
 app = Flask(__name__, template_folder='templates', static_folder='static')
-app.config.update(config.load_config_general().get('flask'))
+app.config.update(load_config_general().get('flask'))
 
 client_config = Configuration(api_key_prefix={'JWT': 'Bearer'})
 
 
 @app.route("/")
-def home():
+def home() -> str:
+    """
+    Returns the homepage as string.
+    :return: The Homepage (index.html)
+    """
     return render_template('index.html')
 
 
 @app.route("/version")
-def version():
+def version() -> str:
+    """
+    Returns the alternative Web Frontend as string.
+    :return: The alternative Homepage (index2.html)
+    """
     return render_template('index2.html')
 
 
 @app.route('/process_run', methods=['POST'])
-def process_run():
+def process_run() -> Response:
+    """
+    Crawls, uploads and indexes a dataset according to user settings.
+    :return: Json-Response, whether process was successful ('ok') or unsuccessful ('Error while processing').
+    """
     url = request.get_json()[0]['url']
     filename = request.get_json()[1]['filename']
     result = pyRdfa().rdf_from_source(url, outputFormat='nt')
@@ -51,9 +67,12 @@ def process_run():
                 return jsonify('Error while processing')
 
 
-
 @app.route('/check_login_data', methods=['POST'])
-def check_login_data():
+def check_login_data() -> Response:
+    """
+    Validates login data for QAnswer against QAnswer frontend.
+    :return: Json-Response, whether login was successful (1) or unsuccessful (0)
+    """
     # Validates user credentials and stores authentication token in config
     with ApiClient(client_config) as api_client:
         login_request = LoginRequest(username_or_email=request.get_json()[0]['username'],
@@ -68,7 +87,7 @@ def check_login_data():
 
 
 @app.route('/crawl-your-data', methods=['POST'])
-def check_login_data_2():
+def check_login_data_2() -> str:
     # Validates user credentials and stores authentication token in config
     with ApiClient(client_config) as api_client:
         login_request = LoginRequest(username_or_email=request.form.get('username'),
@@ -84,7 +103,12 @@ def check_login_data_2():
 
 
 @app.route('/data_downloader/<filename>', methods=['POST', 'GET'])
-def data_downloader(filename):
+def data_downloader(filename) -> str:
+    """
+    Returns the crawled dataset which was crawled under the given name.
+    :param filename: The name of the dataset to be downloaded (without file extension)
+    :return: the dataset as ntriples
+    """
     return send_file('rdfData/' + filename + '.nt', as_attachment=True)
 
 
