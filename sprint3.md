@@ -6,7 +6,7 @@ QEnable
 
 ## 2. Aktive Teammitglieder 
 
-   - [Abdullah Al-hoty](https://gitlab-softwareprojekt.fim.htwk-leipzig.de/users/aalhoty/activity) [Einarbeitung in Frontend (CSS , HTML, Js , Bootstrap, Jquery) -> anwenden (zweite Prototype) -> verbinden mit Backend ]
+   - [Abdullah Al-hoty](https://gitlab-softwareprojekt.fim.htwk-leipzig.de/users/aalhoty/activity) [Frontend, verbinden mit Backend ]
    - [Abdul Rahman Alkedda](https://gitlab-softwareprojekt.fim.htwk-leipzig.de/users/aalkedda/activity) [Backend, Frontend, Docker]
    - [David Deutschmann](https://gitlab-softwareprojekt.fim.htwk-leipzig.de/users/users/ddeutsch/activity)
    - [Johannes Kindler](https://gitlab-softwareprojekt.fim.htwk-leipzig.de/users/jkindler/activity) [CI/CD Pipeline, Docker, production deployment server support]
