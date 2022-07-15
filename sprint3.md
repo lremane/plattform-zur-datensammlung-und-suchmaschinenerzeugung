@@ -16,7 +16,7 @@ QEnable
    - [Finn Mergenthal](https://gitlab-softwareprojekt.fim.htwk-leipzig.de/users/users/fmergent/activity) [Restrukturierung des Clients, Code reviews]
    - [Lukas Ponicke](https://gitlab-softwareprojekt.fim.htwk-leipzig.de/users/lponicke/activity) [Scrum master, Ausarbeitung und Vortragen der Praesentation, Protokollieren der Meetings, Crawler, Reviewing]
    - [Laurin Remane](https://gitlab-softwareprojekt.fim.htwk-leipzig.de/users/users/mremane/activity) [Austausch Client]
-   - [Philipp Semlinger](https://gitlab-softwareprojekt.fim.htwk-leipzig.de/users/users/psemling/activity) [Scrum master, organization, communication product owner]
+   - [Philipp Semlinger](https://gitlab-softwareprojekt.fim.htwk-leipzig.de/users/users/psemling/activity) [Scrum Master, Organisation, Kommunikation Projektsponsor]
 
 ## 3.1 Link zum Piloten & "Tutorial"
 
