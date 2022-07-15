@@ -124,5 +124,7 @@ Webapplikation - GUI
 Die ungleiche Anzahl der Commits und Lines per Person ist sehr ungleich verteilt, weil es unterschiedliche Grundvoraussetzungen der Teammitglieder gibt. Viele administrative Tätigkeiten, Führen und Auswerden von Protokollen, Kommunikation untereinander, mit dem Projektsponsor, Erstellen und Verteilen von Issues, Reviewing, Leiten der Meetings, Organisation des Gits, Halten und Erstellen von Präsentationen, Abgaben und Plakaten sind alles Tätigkeiten, die nicht direkt an Code-Lines absehbar sind. Dies erklärt die unterschiedliche Nachvollziehbarkeit der Aufgaben, die sich keinesfalls in unterschiedlichem zeitlichen Aufwand wiederspiegelt.
 
 ## 6. Intendierte Softwarearchitektur(UML-Diagramm)
- - markieren, welche Komponenten bereits implementiert sind
- - Geben Sie zu allen nicht-funktionalen Anforderungen (vgl. 4.3) an, ob diese in der Architektur repräsentiert sind und wenn ja, durch welche Komponente(n)
+
+<img src="UML Sprint 3.jpeg"
+     alt="UML Sprint 3"
+     style="float: left; margin-right: 10px;" />
