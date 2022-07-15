@@ -12,7 +12,7 @@ QEnable
    - [Johannes Kindler](https://gitlab-softwareprojekt.fim.htwk-leipzig.de/users/jkindler/activity) [CI/CD Pipeline, Docker, production deployment server support]
    - [Tony Lenz](https://gitlab-softwareprojekt.fim.htwk-leipzig.de/users/tlenz1/activity)[Ausarbeitung Projektposter, Ausarbeitung Projektpräsentation]
    - [Lukas Marche](https://gitlab-softwareprojekt.fim.htwk-leipzig.de/users/lmarche/activity)[Ausarbeitung Projektposter, Ausarbeitung Projektpräsentation, Vortrag]
-   - [Moritz Meister](https://gitlab-softwareprojekt.fim.htwk-leipzig.de/users/mmeister/activity)
+   - [Moritz Meister](https://gitlab-softwareprojekt.fim.htwk-leipzig.de/users/mmeister/activity)[Ausarbeitung Projektposter, Ausarbeitung Projektpräsentation, Domain Crawler, Reviewing]
    - [Finn Mergenthal](https://gitlab-softwareprojekt.fim.htwk-leipzig.de/users/users/fmergent/activity) [Restrukturierung des Clients, Code reviews]
    - [Lukas Ponicke](https://gitlab-softwareprojekt.fim.htwk-leipzig.de/users/lponicke/activity) [Scrum master, Ausarbeitung und Vortragen der Praesentation, Protokollieren der Meetings, Crawler, Reviewing]
    - [Laurin Remane](https://gitlab-softwareprojekt.fim.htwk-leipzig.de/users/users/mremane/activity) [Austausch Client]
