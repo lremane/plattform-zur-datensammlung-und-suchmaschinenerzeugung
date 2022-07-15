@@ -28,63 +28,7 @@ QEnable
 
 [Dockerfile](https://gitlab-softwareprojekt.fim.htwk-leipzig.de/pdus/plattform-zur-datensammlung-und-suchmaschinenerzeugung/-/blob/developement/Dockerfile)
 
-### 3.3.1 Quick-Start-Guide
-
-    sudo docker build -t flask-image .
-    sudo docker run --rm -p 5000:5000 flask-image
-
-Weiter geht´s [hier](#ip).
-
-### 3.3.2 Ausführliches Tutorial
-
-Überprüfe, ob die Gruppe "docker" bereits existiert.
-
-    groups 
-    
-Sollte die Gruppe nicht exitieren, muss diese erstellt werden.
-
-    sudo groupadd docker
-
-
-Der Nutzer muss der Gruppe "docker" hinzugefügt werden.
-
-    usermod -aG docker $USER
-
-Dockerstart:
-
-    systemctl start docker
-
-Es muss nun zu dem Verzeichnis des Dockerfiles navigiert und das Docker-Image gebaut werden.
-
-    docker build -t <docker image name> .
-
-Dabei muss `<docker image name>` mit einem Namen für das Docker-Image ersetzt werden. 
-
-Der nächste Schritt ist die Ausführung des Docker-Images.
-
-    docker run --rm -p 5000:5000 <docker image name>
-
-
-`--rm`: Der Docker-Container wird nach dem Verlassen gelöscht, um Platz zu sparen.
-
-`-p`: Gibt die Spezifikation des Ports an.
-
-<a name="ip" ></a>Die Webseite ist nun unter `http://172.17.0.2:5000` erreichbar.
-
-
-Optional, wenn man einen Container bauen möchte: 
-
-    docker container create flask-image
-    docker container list -a 
-    docker start <docker container id>
-    docker exec -it <docker container id> /bin/bash
-
-Dabei muss `<docker container id>` mit der ID des Docker-Containers ersetzt werden. 
-
-Dummy-Login-Daten:
-Username: qenable@fyii.de
-Password: password123
-(https://qanswer-frontend.univ-st-etienne.fr/)
+Nutzung: siehe [README](README.md)
 
 ## 3.3 Gitlab Action
 
