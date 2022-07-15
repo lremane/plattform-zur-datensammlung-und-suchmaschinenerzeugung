@@ -18,16 +18,28 @@ client_config = Configuration(api_key_prefix={'JWT': 'Bearer'})
 
 @app.route("/")
 def home() -> str:
+    """
+    Returns the homepage as string.
+    :return: The Homepage (index.html)
+    """
     return render_template('index.html')
 
 
 @app.route("/version")
 def version() -> str:
+    """
+    Returns the alternative Web Frontend as string.
+    :return: The alternative Homepage (index2.html)
+    """
     return render_template('index2.html')
 
 
 @app.route('/process_run', methods=['POST'])
 def process_run() -> Response:
+    """
+    Crawls, uploads and indexes a dataset according to user settings.
+    :return: Json-Response, wether process was successful ('ok') or unsuccessful ('Error while processing').
+    """
     url = request.get_json()[0]['url']
     filename = request.get_json()[1]['filename']
     result = pyRdfa().rdf_from_source(url, outputFormat='nt')
@@ -53,6 +65,10 @@ def process_run() -> Response:
 
 @app.route('/check_login_data', methods=['POST'])
 def check_login_data() -> Response:
+    """
+    Validates login data for QAnswer against QAnswer frontend.
+    :return: Json-Response, wether login was successful (1) or unsuccessful (0)
+    """
     # Validates user credentials and stores authentication token in config
     with ApiClient(client_config) as api_client:
         login_request = LoginRequest(username_or_email=request.get_json()[0]['username'],
@@ -83,7 +99,12 @@ def check_login_data_2() -> str:
 
 
 @app.route('/data_downloader/<filename>', methods=['POST', 'GET'])
-def data_downloader(filename):
+def data_downloader(filename) -> str:
+    """
+    Returns the crawled dataset which was crawled under the given name.
+    :param filename: The name of the dataset to be downloaded (without file extension)
+    :return: the dataset as ntriples
+    """
     return send_file('rdfData/' + filename + '.nt', as_attachment=True)
 
 
