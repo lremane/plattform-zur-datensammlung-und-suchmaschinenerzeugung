@@ -5,8 +5,8 @@
    - [Abdul Rahman Alkedda](https://gitlab-softwareprojekt.fim.htwk-leipzig.de/users/aalkedda/activity) [Backend, Frontend, Docker]
    - [David Deutschmann](https://gitlab-softwareprojekt.fim.htwk-leipzig.de/users/users/ddeutsch/activity)
    - [Johannes Kindler](https://gitlab-softwareprojekt.fim.htwk-leipzig.de/users/jkindler/activity) [CI/CD Pipeline, Docker, production deployment server support]
-   - [Tony Lenz](https://gitlab-softwareprojekt.fim.htwk-leipzig.de/users/tlenz1/activity)
-   - [Lukas Marche](https://gitlab-softwareprojekt.fim.htwk-leipzig.de/users/lmarche/activity)
+   - [Tony Lenz](https://gitlab-softwareprojekt.fim.htwk-leipzig.de/users/tlenz1/activity)[Ausarbeitung Projektposter, Ausarbeitung Projektpräsentation]
+   - [Lukas Marche](https://gitlab-softwareprojekt.fim.htwk-leipzig.de/users/lmarche/activity)[Ausarbeitung Projektposter, Ausarbeitung Projektpräsentation, Vortrag]
    - [Moritz Meister](https://gitlab-softwareprojekt.fim.htwk-leipzig.de/users/mmeister/activity)
    - [Finn Mergenthal](https://gitlab-softwareprojekt.fim.htwk-leipzig.de/users/users/fmergent/activity) [Restrukturierung des Clients, Code reviews]
    - [Lukas Ponicke](https://gitlab-softwareprojekt.fim.htwk-leipzig.de/users/lponicke/activity)
