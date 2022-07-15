@@ -1,3 +1,7 @@
+"""
+Flask App Module
+Hosts all methods to be accessed by Webclients and serves the frontend.
+"""
 import os
 from config import load_config_general
 import urllib3

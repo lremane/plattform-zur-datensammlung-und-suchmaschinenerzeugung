@@ -1,3 +1,7 @@
+"""
+Configuration Manager Module
+Writes and reads configuration files in a globally canonical way.
+"""
 from os.path import exists
 
 import yaml
