@@ -121,7 +121,16 @@ Webapplikation - GUI
 ## 5. Beiträge der Teammitglieder
 
 
-Die ungleiche Anzahl der Commits und Lines per Person ist sehr ungleich verteilt, weil es unterschiedliche Grundvoraussetzungen der Teammitglieder gibt. Viele administrative Tätigkeiten, Führen und Auswerden von Protokollen, Kommunikation untereinander, mit dem Projektsponsor, Erstellen und Verteilen von Issues, Reviewing, Leiten der Meetings, Organisation des Gits, Halten und Erstellen von Präsentationen, Abgaben und Plakaten sind alles Tätigkeiten, die nicht direkt an Code-Lines absehbar sind. Dies erklärt die unterschiedliche Nachvollziehbarkeit der Aufgaben, die sich keinesfalls in unterschiedlichem zeitlichen Aufwand wiederspiegelt.
+Viele Tätigkeiten wie beispielsweise 
+- Führen von Protokollen
+- interne und externe Kommunikation
+- Erstellen von Issues
+- Code Reviewing
+- Leiten der Meetings
+- Organisation des Gits
+- Erstellen der formalen Anforderungen 
+sind Tätigkeiten, die nicht nicht in Commits und LoC messbar sind. 
+Wir haben uns Mühe gegeben, unsere Arbeit, wo immer sinnvoll, über GitLab zu dokumentieren und bitten darum, die einzelnen [Activity-Feeds](#2. Aktive Teammitglieder) zur Bewertung der Individualleistung heranzuziehen.
 
 ## 6. Intendierte Softwarearchitektur(UML-Diagramm)
 
