@@ -29,13 +29,7 @@ def home() -> str:
     return render_template('index.html')
 
 
-@app.route("/version")
-def version() -> str:
-    """
-    Returns the alternative Web Frontend as string.
-    :return: The alternative Homepage (index2.html)
-    """
-    return render_template('index2.html')
+
 
 
 @app.route('/process_run', methods=['POST'])
@@ -85,21 +79,6 @@ def check_login_data() -> Response:
         except ApiException:
             return jsonify({'res': '0'})
 
-
-@app.route('/crawl-your-data', methods=['POST'])
-def check_login_data_2() -> str:
-    # Validates user credentials and stores authentication token in config
-    with ApiClient(client_config) as api_client:
-        login_request = LoginRequest(username_or_email=request.form.get('username'),
-                                     password=request.form.get('password'))
-
-        try:
-            auth = UserControllerApi(api_client).signin_using_post(login_request)
-            client_config.api_key = {'JWT': auth.access_token}
-
-            return render_template('index3.html')
-        except ApiException:
-            return render_template('error.html')
 
 
 @app.route('/data_downloader/<filename>', methods=['POST', 'GET'])
