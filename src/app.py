@@ -6,7 +6,7 @@ from qaclient.models import IndexConfig, LoginRequest
 from qaclient import ApiException, Configuration, ApiClient
 from qaclient.apis import UserControllerApi, DatasetControllerKgApi
 
-from flask import Flask, render_template, request, jsonify, send_file
+from flask import Flask, render_template, request, jsonify, send_file, Response
 
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
@@ -17,17 +17,17 @@ client_config = Configuration(api_key_prefix={'JWT': 'Bearer'})
 
 
 @app.route("/")
-def home():
+def home() -> str:
     return render_template('index.html')
 
 
 @app.route("/version")
-def version():
+def version() -> str:
     return render_template('index2.html')
 
 
 @app.route('/process_run', methods=['POST'])
-def process_run():
+def process_run() -> Response:
     url = request.get_json()[0]['url']
     filename = request.get_json()[1]['filename']
     result = pyRdfa().rdf_from_source(url, outputFormat='nt')
@@ -51,9 +51,8 @@ def process_run():
                 return jsonify('Error while processing')
 
 
-
 @app.route('/check_login_data', methods=['POST'])
-def check_login_data():
+def check_login_data() -> Response:
     # Validates user credentials and stores authentication token in config
     with ApiClient(client_config) as api_client:
         login_request = LoginRequest(username_or_email=request.get_json()[0]['username'],
@@ -68,7 +67,7 @@ def check_login_data():
 
 
 @app.route('/crawl-your-data', methods=['POST'])
-def check_login_data_2():
+def check_login_data_2() -> str:
     # Validates user credentials and stores authentication token in config
     with ApiClient(client_config) as api_client:
         login_request = LoginRequest(username_or_email=request.form.get('username'),
