@@ -78,6 +78,4 @@ Wir haben uns Mühe gegeben, unsere Arbeit, wo immer sinnvoll, über GitLab zu d
 
 ## 6. Intendierte Softwarearchitektur(UML-Diagramm)
 
-<img src="UML Sprint 3.jpeg"
-     alt="UML Sprint 3"
-     style="float: left; margin-right: 10px;" />
+![UML Diagramm](doc/assets/sprint3/UML_Sprint_3.jpg)
