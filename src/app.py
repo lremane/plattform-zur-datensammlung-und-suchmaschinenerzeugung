@@ -29,9 +29,6 @@ def home() -> str:
     return render_template('index.html')
 
 
-
-
-
 @app.route('/process_run', methods=['POST'])
 def process_run() -> Response:
     """
@@ -78,7 +75,6 @@ def check_login_data() -> Response:
             return jsonify({'res': '1'})
         except ApiException:
             return jsonify({'res': '0'})
-
 
 
 @app.route('/data_downloader/<filename>', methods=['POST', 'GET'])
