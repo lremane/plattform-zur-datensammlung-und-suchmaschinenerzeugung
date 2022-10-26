@@ -1,17 +1,29 @@
-image: docker:latest
-
-stages:
-  - build
-
 services:
   - docker:dind
 
-before_script:
-  - echo -n $CI_REGISTRY_TOKEN | docker login -u "$CI_REGISTRY_USER" --password-stdin $CI_REGISTRY
+stages:
+  - linting
+  - build
 
-Build:
-  stage: build
+flake8:
+  stage: linting
+  image: registry.gitlab.com/pipeline-components/flake8:latest
+  allow_failure: true
   script:
+    - flake8 --verbose .
+
+pylint:
+  stage: linting
+  image: registry.gitlab.com/pipeline-components/pylint
+  allow_failure: true
+  script:
+    - pylint --fail-under=3 src
+
+build:
+  stage: build
+  image: docker:latest
+  script:
+    - echo -n $CI_REGISTRY_TOKEN | docker login -u "$CI_REGISTRY_USER" --password-stdin $CI_REGISTRY
     - docker pull $CI_REGISTRY_IMAGE:latest || true
     - docker build --cache-from $CI_REGISTRY_IMAGE:latest --tag $CI_REGISTRY_IMAGE:$CI_COMMIT_SHA .
     - docker push $CI_REGISTRY_IMAGE:$CI_COMMIT_SHA
